@@ -24,7 +24,7 @@ CONFIG_DIR="$HOME/.config"
 # Recommended applications list
 PACKAGES=(
     hyprland xdg-desktop-portal-hyprland polkit-kde-agent sddm
-    waybar rofi-wayland dunst hyprpaper hyprlock hypridle nwg-look
+    waybar rofi-wayland dunst hyprpaper hyprlock hypridle nwg-look wlogout
     kitty zsh zsh-syntax-highlighting zsh-autosuggestions starship neovim
     pipewire pipewire-pulse wireplumber pamixer brightnessctl pavucontrol
     grim slurp cliphist yazi fastfetch
@@ -157,6 +157,48 @@ configure_sddm() {
             fi
             sudo systemctl enable sddm
             success "SDDM has been enabled. It will start on the next reboot."
+
+            # SDDM Silent Theme Setup
+            echo
+            read -rp "Would you like to install and configure 'sddm-silent-theme'? (y/N): " theme_choice
+            if [[ "$theme_choice" =~ ^[Yy]$ ]]; then
+                if [ ! -d "/usr/share/sddm/themes/silent" ]; then
+                    info "sddm-silent-theme is not installed. Installing..."
+                    if command -v yay &>/dev/null; then
+                        yay -S --noconfirm sddm-silent-theme || true
+                    fi
+
+                    # Double check if yay succeeded, otherwise fallback to git clone
+                    if [ ! -d "/usr/share/sddm/themes/silent" ]; then
+                        warn "Installing via yay failed or yay is not present. Cloning Git repository..."
+                        local tmp_dir
+                        tmp_dir=$(mktemp -d)
+                        if git clone -b main --depth=1 https://github.com/uiriansan/SilentSDDM "$tmp_dir"; then
+                            (cd "$tmp_dir" && ./install.sh)
+                            rm -rf "$tmp_dir"
+                        else
+                            error "Failed to clone SilentSDDM repository."
+                        fi
+                    fi
+                fi
+
+                # Configure SDDM to use the theme
+                if [ -d "/usr/share/sddm/themes/silent" ]; then
+                    info "Configuring sddm-silent-theme..."
+                    sudo mkdir -p /etc/sddm.conf.d
+                    sudo tee /etc/sddm.conf.d/theme.conf >/dev/null <<EOF
+[General]
+InputMethod=qtvirtualkeyboard
+GreeterEnvironment=QML2_IMPORT_PATH=/usr/share/sddm/themes/silent/components/,QT_IM_MODULE=qtvirtualkeyboard
+
+[Theme]
+Current=silent
+EOF
+                    success "sddm-silent-theme has been configured successfully!"
+                else
+                    error "Could not verify theme installation at /usr/share/sddm/themes/silent. Skipping theme configuration."
+                fi
+            fi
         fi
     fi
 }

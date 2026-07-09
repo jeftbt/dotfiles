@@ -1,0 +1,58 @@
+/* wlogout Tokyo Night Styling */
+
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    background-color: rgba(26, 27, 38, 0.85);
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+button {
+    background-color: rgba(36, 40, 59, 0.5);
+    color: #c0caf5;
+    border: 2px solid rgba(122, 162, 247, 0.2);
+    border-radius: 15px;
+    margin: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:focus,
+button:active,
+button:hover {
+    background-color: rgba(122, 162, 247, 0.2);
+    color: #7aa2f7;
+    border: 2px solid #7aa2f7;
+    box-shadow: 0 0 10px rgba(122, 162, 247, 0.4);
+    outline: none;
+}
+
+/* Individual button icons */
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}
