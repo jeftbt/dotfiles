@@ -35,8 +35,19 @@ A clean, minimalist configuration starting point for Arch Linux running Hyprland
 
 ## How to Install
 
-1. Clone or copy this repository to your system (e.g. at `~/dotfiles`).
-2. Open a terminal and run the setup script:
+Run the following one-liner in your terminal to clone the repository and launch the setup:
+
+```bash
+git clone https://github.com/jeftbt/dotfiles.git ~/dotfiles && cd ~/dotfiles && ./install.sh
+```
+
+Or manually:
+
+1. Clone the repository to `~/dotfiles`:
+   ```bash
+   git clone https://github.com/jeftbt/dotfiles.git ~/dotfiles
+   ```
+2. Navigate to the folder and run the setup script:
    ```bash
    cd ~/dotfiles
    ./install.sh
