@@ -1,0 +1,20 @@
+# Ignore sensitive or local system files
+*~
+*.log
+*.bak
+.DS_Store
+
+# Ignore local temporary/cache files that applications might create
+.cache/
+.npm/
+.yarn/
+node_modules/
+
+# Ignore custom or local configuration files
+dotconfig/hypr/localprefs.conf
+
+# Ignore potential credentials/keys
+*.key
+*.pem
+*.token
+*.env

@@ -33,6 +33,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias c="clear"
 alias h="history"
+alias ff="clear && fastfetch"
 
 # Git Aliases
 alias gs="git status"
@@ -51,6 +52,11 @@ alias yay-remove="yay -Rns"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export PAGER="less"
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Add local bin to PATH
+export PATH="$HOME/.local/bin:$PATH"
 
 # Initialize Starship Prompt (if installed)
 if command -v starship &>/dev/null; then
@@ -59,3 +65,9 @@ else
     # Simple backup prompt if starship is not installed
     PROMPT="%F{cyan}%n%f@%F{blue}%m%f:%F{green}%~%f$ "
 fi
+
+# Plugins (installed via pacman/yay)
+[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && \
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

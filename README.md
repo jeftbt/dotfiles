@@ -6,10 +6,28 @@ A clean, minimalist configuration starting point for Arch Linux running Hyprland
 
 ```text
 ├── dotconfig/            # Configs that go to ~/.config/
+│   ├── dunst/            # Notification Daemon
+│   │   └── dunstrc
+│   ├── fastfetch/        # System Info Display
+│   │   └── config.jsonc
+│   ├── gtk-3.0/          # GTK3 Dark Theme
+│   │   └── settings.ini
+│   ├── gtk-4.0/          # GTK4 Dark Theme
+│   │   └── settings.ini
 │   ├── hypr/             # Hyprland Window Manager
+│   │   ├── hyprland.conf
+│   │   ├── hyprpaper.conf
+│   │   ├── hyprlock.conf
+│   │   └── hypridle.conf
 │   ├── kitty/            # Kitty Terminal
+│   │   └── kitty.conf
 │   ├── rofi/             # Application Launcher (drun/run)
+│   │   └── config.rasi
+│   ├── starship/         # Starship Prompt
+│   │   └── starship.toml
 │   └── waybar/           # Top Status Bar
+│       ├── config.jsonc
+│       └── style.css
 ├── home/                 # Configs that go directly to ~/ (home folder)
 │   └── .zshrc            # Clean shell config
 └── install.sh            # Setup & symlink script (with automatic backups)
@@ -36,8 +54,9 @@ A clean, minimalist configuration starting point for Arch Linux running Hyprland
 - **SUPER + E**: Open Yazi File Manager (runs in Kitty)
 - **SUPER + Q**: Close active window
 - **SUPER + W**: Toggle floating window
+- **SUPER + F**: Toggle fullscreen
 - **SUPER + V**: Clipboard History (Cliphist)
-- **SUPER + P**: Screenshot selection (grim + slurp)
-- **Print**: Screenshot all screens
+- **SUPER + P**: Screenshot selection (grim + slurp → clipboard & file)
+- **Print**: Screenshot all screens (→ clipboard & file)
 - **SUPER + Delete**: Exit Hyprland
 - **Volume / Brightness Keys**: Working out-of-the-box (uses `pamixer` and `brightnessctl`)

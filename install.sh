@@ -25,10 +25,18 @@ CONFIG_DIR="$HOME/.config"
 PACKAGES=(
     hyprland xdg-desktop-portal-hyprland polkit-kde-agent sddm
     waybar rofi-wayland dunst hyprpaper hyprlock hypridle nwg-look
-    kitty zsh starship neovim
+    kitty zsh zsh-syntax-highlighting zsh-autosuggestions starship neovim
     pipewire pipewire-pulse wireplumber pamixer brightnessctl pavucontrol
     grim slurp cliphist yazi fastfetch
     ttf-jetbrains-mono-nerd ttf-font-awesome
+    # CPU: Intel i7-13700HX
+    intel-ucode
+    # GPU: Intel UHD 770 + NVIDIA RTX 4060 Max-Q
+    mesa lib32-mesa vulkan-intel intel-media-driver
+    nvidia-open-dkms nvidia-utils lib32-nvidia-utils nvidia-settings
+    libva-nvidia-driver
+    # Bluetooth
+    bluez bluez-utils
 )
 
 # Step 1: Package installation check
@@ -99,13 +107,16 @@ link_file() {
     fi
 
     # Create symlink
-    ln -sf "$source_abs" "$dest_path"
+    ln -sfn "$source_abs" "$dest_path"
     success "Linked: $dest_path -> $source_abs"
 }
 
 # Step 3: Symlink all dotfiles
 link_dotfiles() {
     info "Starting linking process..."
+
+    # Enable dotglob to match hidden files (e.g. .zshrc)
+    shopt -s dotglob
 
     # Link everything in dotconfig to ~/.config/
     if [ -d "$SCRIPT_DIR/dotconfig" ]; then
@@ -126,6 +137,9 @@ link_dotfiles() {
             link_file "$item" "$HOME/$name"
         done
     fi
+
+    # Restore dotglob
+    shopt -u dotglob
 }
 
 # Step 4: SDDM configuration helper
@@ -147,6 +161,27 @@ configure_sddm() {
     fi
 }
 
+# Step 5: Wallpapers & Screenshots folder setup
+create_user_folders() {
+    info "Setting up user folders..."
+
+    local wp_dir="$HOME/Pictures/wallpapers"
+    if [ ! -d "$wp_dir" ]; then
+        mkdir -p "$wp_dir"
+        success "Created wallpapers directory at: $wp_dir"
+    else
+        info "Wallpapers directory already exists at: $wp_dir"
+    fi
+
+    local ss_dir="$HOME/Pictures/screenshots"
+    if [ ! -d "$ss_dir" ]; then
+        mkdir -p "$ss_dir"
+        success "Created screenshots directory at: $ss_dir"
+    else
+        info "Screenshots directory already exists at: $ss_dir"
+    fi
+}
+
 # Run Main
 main() {
     echo -e "${BLUE}=== Clean Dotfiles Setup Script ===${NC}"
@@ -154,6 +189,9 @@ main() {
 
     # Check packages
     check_packages
+
+    # Setup wallpapers & screenshots folders
+    create_user_folders
 
     # Create backups & symlink dotfiles
     link_dotfiles
@@ -163,9 +201,27 @@ main() {
 
     echo
     success "Installation complete! Enjoy your clean, simple desktop environment."
+    warn "Remember to place a wallpaper image named 'default.jpg' inside ~/Pictures/wallpapers/"
+    warn "Otherwise, hyprpaper will not be able to load your background."
     if [ -d "$BACKUP_DIR" ]; then
         info "Any replaced configurations have been backed up to: $BACKUP_DIR"
     fi
+
+    echo
+    echo -e "${RED}=== NVIDIA CRITICAL SETUP ===${NC}"
+    warn "Hyprland + NVIDIA için aşağıdaki adımları MUTLAKA uygulayın:"
+    echo
+    echo "  1. Kernel parametresi ekleyin:"
+    echo "     - systemd-boot: /boot/loader/entries/*.conf → options satırına 'nvidia-drm.modeset=1' ekleyin"
+    echo "     - GRUB: /etc/default/grub → GRUB_CMDLINE_LINUX_DEFAULT satırına 'nvidia-drm.modeset=1' ekleyin, sonra 'sudo grub-mkconfig -o /boot/grub/grub.cfg'"
+    echo
+    echo "  2. mkinitcpio modülleri:"
+    echo "     /etc/mkinitcpio.conf → MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)"
+    echo "     Sonra: sudo mkinitcpio -P"
+    echo
+    echo "  3. Bluetooth servisini başlatın:"
+    echo "     sudo systemctl enable --now bluetooth.service"
+    echo
 }
 
 main "$@"
