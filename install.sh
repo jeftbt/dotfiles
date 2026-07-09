@@ -21,7 +21,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BACKUP_DIR="$HOME/.config/cfg_backups/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 CONFIG_DIR="$HOME/.config"
 
-# Recommended applications list
+# Recommended applications list (Hem Pacman hem AUR paketleri karışık)
 PACKAGES=(
     hyprland xdg-desktop-portal-hyprland polkit-kde-agent sddm
     waybar rofi-wayland dunst hyprpaper hyprlock hypridle nwg-look wlogout
@@ -39,13 +39,36 @@ PACKAGES=(
     bluez bluez-utils
 )
 
-# Step 1: Package installation check
+# Step 0: Ensure yay is installed
+ensure_yay() {
+    if ! command -v yay &>/dev/null; then
+        warn "AUR helper 'yay' is not installed. Setting up 'yay' first..."
+        
+        # Install dependencies for building yay
+        info "Installing base-devel and git..."
+        sudo pacman -S --needed --noconfirm base-devel git
+
+        local tmp_yay
+        tmp_yay=$(mktemp -d)
+        info "Cloning and building yay..."
+        git clone https://aur.archlinux.org/yay.git "$tmp_yay"
+        (cd "$tmp_yay" && makepkg -si --noconfirm)
+        rm -rf "$tmp_yay"
+        
+        success "'yay' has been successfully installed!"
+    fi
+}
+
+# Step 1: Package installation check (Using yay for both repo and AUR)
 check_packages() {
-    info "Checking required packages..."
+    ensure_yay
+
+    info "Checking required packages (Official & AUR)..."
     local missing_pkgs=()
 
     for pkg in "${PACKAGES[@]}"; do
-        if ! pacman -Qi "$pkg" &>/dev/null; then
+        # yay -Q hem yerel hem AUR paketlerini kontrol edebilir
+        if ! yay -Q "$pkg" &>/dev/null; then
             missing_pkgs+=("$pkg")
         fi
     done
@@ -63,16 +86,9 @@ check_packages() {
     echo
     read -rp "Would you like to install the missing packages now? (y/N): " choice
     if [[ "$choice" =~ ^[Yy]$ ]]; then
-        if command -v yay &>/dev/null; then
-            info "Installing missing packages with yay..."
-            yay -S "${missing_pkgs[@]}"
-        elif command -v pacman &>/dev/null; then
-            info "Installing missing packages with sudo pacman..."
-            sudo pacman -S "${missing_pkgs[@]}"
-        else
-            error "No package manager (yay/pacman) found. Please install them manually."
-            exit 1
-        fi
+        info "Installing missing packages with yay..."
+        # --needed parametresi zaten kurulu olanları tekrar kurmaz
+        yay -S --needed "${missing_pkgs[@]}"
     else
         warn "Proceeding without installing missing packages. Some configurations might not work properly."
     fi
@@ -83,30 +99,24 @@ link_file() {
     local source_path="$1"
     local dest_path="$2"
 
-    # Normalize paths
     local source_abs
     source_abs="$(realpath "$source_path")"
 
-    # Create destination parent directories if they don't exist
     local dest_parent
     dest_parent="$(dirname "$dest_path")"
     mkdir -p "$dest_parent"
 
-    # Check if target already exists
     if [ -e "$dest_path" ] || [ -L "$dest_path" ]; then
-        # Check if it's already symlinked to the correct source
         if [ -L "$dest_path" ] && [ "$(readlink -f "$dest_path")" = "$source_abs" ]; then
             success "Already linked: $dest_path -> $source_abs"
             return 0
         fi
 
-        # Backup existing target
         mkdir -p "$BACKUP_DIR"
         info "Backing up existing $dest_path to $BACKUP_DIR"
         mv "$dest_path" "$BACKUP_DIR/"
     fi
 
-    # Create symlink
     ln -sfn "$source_abs" "$dest_path"
     success "Linked: $dest_path -> $source_abs"
 }
@@ -115,10 +125,8 @@ link_file() {
 link_dotfiles() {
     info "Starting linking process..."
 
-    # Enable dotglob to match hidden files (e.g. .zshrc)
     shopt -s dotglob
 
-    # Link everything in dotconfig to ~/.config/
     if [ -d "$SCRIPT_DIR/dotconfig" ]; then
         for item in "$SCRIPT_DIR/dotconfig"/*; do
             [ -e "$item" ] || continue
@@ -128,7 +136,6 @@ link_dotfiles() {
         done
     fi
 
-    # Link everything in home to ~/
     if [ -d "$SCRIPT_DIR/home" ]; then
         for item in "$SCRIPT_DIR/home"/*; do
             [ -e "$item" ] || continue
@@ -138,18 +145,17 @@ link_dotfiles() {
         done
     fi
 
-    # Restore dotglob
     shopt -u dotglob
 }
 
 # Step 4: SDDM configuration helper
 configure_sddm() {
-    if pacman -Qi sddm &>/dev/null; then
+    # sddm'in kurulu olup olmadığını yay -Q ile kontrol ediyoruz
+    if yay -Q sddm &>/dev/null; then
         echo
         read -rp "Would you like to enable the SDDM login manager? (y/N): " sddm_choice
         if [[ "$sddm_choice" =~ ^[Yy]$ ]]; then
             info "Enabling SDDM service..."
-            # Check if any display manager is already running
             if systemctl is-active --quiet gdm || systemctl is-active --quiet lightdm || systemctl is-active --quiet sddm; then
                 warn "A display manager service is already active. Disabling active display manager first..."
                 sudo systemctl disable gdm &>/dev/null || true
@@ -158,19 +164,15 @@ configure_sddm() {
             sudo systemctl enable sddm
             success "SDDM has been enabled. It will start on the next reboot."
 
-            # SDDM Silent Theme Setup
             echo
             read -rp "Would you like to install and configure 'sddm-silent-theme'? (y/N): " theme_choice
             if [[ "$theme_choice" =~ ^[Yy]$ ]]; then
                 if [ ! -d "/usr/share/sddm/themes/silent" ]; then
-                    info "sddm-silent-theme is not installed. Installing..."
-                    if command -v yay &>/dev/null; then
-                        yay -S --noconfirm sddm-silent-theme || true
-                    fi
+                    info "sddm-silent-theme is not installed. Installing via yay..."
+                    yay -S --noconfirm sddm-silent-theme || true
 
-                    # Double check if yay succeeded, otherwise fallback to git clone
                     if [ ! -d "/usr/share/sddm/themes/silent" ]; then
-                        warn "Installing via yay failed or yay is not present. Cloning Git repository..."
+                        warn "Installing via yay failed. Cloning Git repository..."
                         local tmp_dir
                         tmp_dir=$(mktemp -d)
                         if git clone -b main --depth=1 https://github.com/uiriansan/SilentSDDM "$tmp_dir"; then
@@ -182,7 +184,6 @@ configure_sddm() {
                     fi
                 fi
 
-                # Configure SDDM to use the theme
                 if [ -d "/usr/share/sddm/themes/silent" ]; then
                     info "Configuring sddm-silent-theme..."
                     sudo mkdir -p /etc/sddm.conf.d
@@ -229,7 +230,7 @@ main() {
     echo -e "${BLUE}=== Clean Dotfiles Setup Script ===${NC}"
     echo
 
-    # Check packages
+    # Check and install packages via yay
     check_packages
 
     # Setup wallpapers & screenshots folders
