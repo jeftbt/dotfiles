@@ -59,6 +59,7 @@ export LC_ALL="en_US.UTF-8"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Initialize Starship Prompt (if installed)
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 if command -v starship &>/dev/null; then
     eval "$(starship init zsh)"
 else
@@ -71,3 +72,4 @@ fi
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && \
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+export PATH=$PATH:~/.spicetify

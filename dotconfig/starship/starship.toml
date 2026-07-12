@@ -1,4 +1,4 @@
-# Starship Prompt Configuration (Tokyo Night Theme)
+# Starship Prompt Configuration (Catppuccin Mocha Theme)
 
 # General settings
 format = """$directory$git_branch$git_status$python$nodejs$rust$golang$java$cmd_duration$line_break$character"""
@@ -6,26 +6,26 @@ add_newline = true
 
 # Prompt character
 [character]
-success_symbol = "[❯](bold #7aa2f7)"
-error_symbol = "[❯](bold #f7768e)"
+success_symbol = "[❯](bold #94e2d5)"
+error_symbol = "[❯](bold #f38ba8)"
 
 # Directory
 [directory]
-style = "bold #7dcfff"
+style = "bold #89dceb"
 truncation_length = 3
 truncate_to_repo = true
 read_only = " 󰌾"
-read_only_style = "bold #f7768e"
+read_only_style = "bold #f38ba8"
 
 # Git Branch
 [git_branch]
 symbol = " "
-style = "bold #bb9af7"
+style = "bold #cba6f7"
 format = "[$symbol$branch(:$remote_branch)]($style) "
 
 # Git Status
 [git_status]
-style = "bold #e0af68"
+style = "bold #f9e2af"
 format = '([$all_status$ahead_behind]($style) )'
 conflicted = "="
 ahead = "⇡${count}"
@@ -40,31 +40,31 @@ deleted = "✘${count}"
 # Command Duration
 [cmd_duration]
 min_time = 2_000
-style = "bold #565f89"
+style = "bold #6c7086"
 format = "[$duration]($style) "
 
 # Language indicators
 [python]
 symbol = " "
-style = "bold #e0af68"
+style = "bold #f9e2af"
 format = "[$symbol$version]($style) "
 
 [nodejs]
 symbol = " "
-style = "bold #9ece6a"
+style = "bold #a6e3a1"
 format = "[$symbol$version]($style) "
 
 [rust]
 symbol = " "
-style = "bold #f7768e"
+style = "bold #f38ba8"
 format = "[$symbol$version]($style) "
 
 [golang]
 symbol = " "
-style = "bold #7dcfff"
+style = "bold #89dceb"
 format = "[$symbol$version]($style) "
 
 [java]
 symbol = " "
-style = "bold #f7768e"
+style = "bold #f38ba8"
 format = "[$symbol$version]($style) "

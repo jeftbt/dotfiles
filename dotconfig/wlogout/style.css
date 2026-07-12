@@ -1,58 +1,50 @@
-/* wlogout Tokyo Night Styling */
-
 * {
-    background-image: none;
-    box-shadow: none;
+  background-image: none;
+  box-shadow: none;
 }
 
 window {
-    background-color: rgba(26, 27, 38, 0.85);
-    font-family: "JetBrainsMono Nerd Font", sans-serif;
+  background-color: rgba(30, 30, 46, 0.60);
 }
 
 button {
-    background-color: rgba(36, 40, 59, 0.5);
-    color: #c0caf5;
-    border: 2px solid rgba(122, 162, 247, 0.2);
-    border-radius: 15px;
-    margin: 15px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 25%;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0;
+  border-color: #45475a;
+  text-decoration-color: #cdd6f4;
+  color: #cdd6f4;
+  background-color: #181825;
+  border-style: solid;
+  border-width: 1px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
 }
 
-button:focus,
-button:active,
-button:hover {
-    background-color: rgba(122, 162, 247, 0.2);
-    color: #7aa2f7;
-    border: 2px solid #7aa2f7;
-    box-shadow: 0 0 10px rgba(122, 162, 247, 0.4);
-    outline: none;
+button:focus, button:active, button:hover {
+  background-color: #313244;
+  outline-style: none;
 }
 
-/* Individual button icons */
 #lock {
-    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+    background-image: url("/home/burakt/.config/wlogout/icons/lock.svg");
 }
 
 #logout {
-    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+    background-image: url("/home/burakt/.config/wlogout/icons/logout.svg");
 }
 
 #suspend {
-    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+    background-image: url("/home/burakt/.config/wlogout/icons/suspend.svg");
 }
 
 #hibernate {
-    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+    background-image: url("/home/burakt/.config/wlogout/icons/hibernate.svg");
 }
 
 #shutdown {
-    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+    background-image: url("/home/burakt/.config/wlogout/icons/shutdown.svg");
 }
 
 #reboot {
-    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+    background-image: url("/home/burakt/.config/wlogout/icons/reboot.svg");
 }

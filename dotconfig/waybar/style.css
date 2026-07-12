@@ -1,4 +1,5 @@
 /* Waybar Minimalist Styling */
+@import "mocha.css";
 
 * {
     border: none;
@@ -9,9 +10,9 @@
 }
 
 window#waybar {
-    background-color: rgba(26, 27, 38, 0.85);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    color: #c0caf5;
+    background-color: alpha(@base, 0.70);
+    border-bottom: 2px solid @surface0;
+    color: @text;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -23,7 +24,7 @@ window#waybar.hidden {
 #workspaces button {
     padding: 0 10px;
     background-color: transparent;
-    color: #565f89;
+    color: @overlay0;
     border-bottom: 3px solid transparent;
     transition: all 0.3s ease;
 }
@@ -32,17 +33,17 @@ window#waybar.hidden {
     background: rgba(0, 0, 0, 0.2);
     box-shadow: inherit;
     text-shadow: inherit;
-    color: #c0caf5;
+    color: @text;
 }
 
 #workspaces button.active {
-    color: #7aa2f7;
-    border-bottom: 3px solid #7aa2f7;
+    color: @blue;
+    border-bottom: 3px solid @blue;
 }
 
 #workspaces button.urgent {
-    color: #f7768e;
-    background-color: rgba(247, 118, 142, 0.15);
+    color: @red;
+    background-color: alpha(@red, 0.15);
 }
 
 #clock,
@@ -57,27 +58,27 @@ window#waybar.hidden {
     padding: 0 12px;
     margin: 4px 2px;
     border-radius: 6px;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #c0caf5;
+    background-color: alpha(@crust, 0.15);
+    color: @text;
 }
 
 /* Specific colors for modules to make it readable but minimal */
 #clock {
-    color: #7aa2f7;
+    color: @blue;
     font-weight: bold;
 }
 
 #battery {
-    color: #a9b1d6;
+    color: @text;
 }
 
 #battery.charging, #battery.plugged {
-    color: #9ece6a;
+    color: @green;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f7768e;
-    color: #1a1b26;
+    background-color: @red;
+    color: @base;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -86,32 +87,32 @@ window#waybar.hidden {
 }
 
 #cpu {
-    color: #b4f9f8;
+    color: @teal;
 }
 
 #memory {
-    color: #bb9af3;
+    color: @teal;
 }
 
 #network {
-    color: #0db9d7;
+    color: @sky;
 }
 
 #pulseaudio {
-    color: #2ac3de;
+    color: @sapphire;
 }
 
 #pulseaudio.muted {
-    color: #565f89;
+    color: @overlay0;
 }
 
 #tray {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: alpha(@crust, 0.5);
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: @text;
+        color: @base;
     }
 }

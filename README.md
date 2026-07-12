@@ -19,8 +19,8 @@ A clean, minimalist configuration starting point for Arch Linux running Hyprland
 │   │   ├── hyprpaper.conf
 │   │   ├── hyprlock.conf
 │   │   └── hypridle.conf
-│   ├── kitty/            # Kitty Terminal
-│   │   └── kitty.conf
+│   ├── ghostty/          # Ghostty Terminal
+│   │   └── config.ghostty
 │   ├── rofi/             # Application Launcher (drun/run)
 │   │   └── config.rasi
 │   ├── starship/         # Starship Prompt
@@ -59,12 +59,13 @@ Or manually:
 
 ## Keybindings (Default)
 
-- **SUPER + T**: Open Kitty Terminal
-- **SUPER + A**: Open Rofi Launcher (Apps)
+- **SUPER + T**: Open Ghostty Terminal
+- **SUPER + A**: Open adi1090x Rofi Launcher (Apps)
 - **SUPER + Tab**: Open Rofi Window Switcher
-- **SUPER + E**: Open Yazi File Manager (runs in Kitty)
+- **SUPER + E**: Open Yazi File Manager (runs in Ghostty)
 - **SUPER + Q**: Close active window
 - **SUPER + W**: Toggle floating window
+- **SUPER + SHIFT + W**: Wallpaper Selector (WallRizz TUI)
 - **SUPER + F**: Toggle fullscreen
 - **SUPER + V**: Clipboard History (Cliphist)
 - **SUPER + P**: Screenshot selection (grim + slurp → clipboard & file)

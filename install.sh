@@ -25,10 +25,12 @@ CONFIG_DIR="$HOME/.config"
 PACKAGES=(
     hyprland xdg-desktop-portal-hyprland polkit-kde-agent sddm
     waybar rofi-wayland dunst hyprpaper hyprlock hypridle nwg-look wlogout
-    kitty zsh zsh-syntax-highlighting zsh-autosuggestions starship neovim
+    ghostty zsh zsh-syntax-highlighting zsh-autosuggestions starship neovim
     pipewire pipewire-pulse wireplumber pamixer brightnessctl pavucontrol
     grim slurp cliphist yazi fastfetch
     ttf-jetbrains-mono-nerd ttf-font-awesome
+    catppuccin-gtk-theme-mocha
+    catppuccin-cursors-mocha
     # CPU: Intel i7-13700HX
     intel-ucode
     # GPU: Intel UHD 770 + NVIDIA RTX 4060 Max-Q
@@ -165,8 +167,14 @@ configure_sddm() {
             success "SDDM has been enabled. It will start on the next reboot."
 
             echo
-            read -rp "Would you like to install and configure 'sddm-silent-theme'? (y/N): " theme_choice
-            if [[ "$theme_choice" =~ ^[Yy]$ ]]; then
+            info "Select an SDDM theme to install and configure:"
+            echo "  1) sddm-silent-theme (Minimalist theme)"
+            echo "  2) sddm-astronaut-theme (Modern theme via official setup script)"
+            echo "  3) Skip theme configuration"
+            read -rp "Enter choice [1-3] (default: 3): " theme_choice
+            theme_choice=${theme_choice:-3}
+
+            if [[ "$theme_choice" == "1" ]]; then
                 if [ ! -d "/usr/share/sddm/themes/silent" ]; then
                     info "sddm-silent-theme is not installed. Installing via yay..."
                     yay -S --noconfirm sddm-silent-theme || true
@@ -199,6 +207,19 @@ EOF
                 else
                     error "Could not verify theme installation at /usr/share/sddm/themes/silent. Skipping theme configuration."
                 fi
+            elif [[ "$theme_choice" == "2" ]]; then
+                info "Starting installation of sddm-astronaut-theme..."
+                info "This will run Keyitdev's official installation script: https://github.com/Keyitdev/sddm-astronaut-theme"
+                info "Please follow the prompts on the screen to choose your options/sub-themes."
+                echo
+
+                if bash -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"; then
+                    success "sddm-astronaut-theme setup script completed successfully!"
+                else
+                    error "sddm-astronaut-theme setup script returned an error."
+                fi
+            else
+                info "Skipping SDDM theme configuration."
             fi
         fi
     fi
