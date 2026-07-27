@@ -1,5 +1,5 @@
 -- Core System Configuration Table
-local colors = require("themes.catppuccin-mocha")
+local colors = require("themes.theme")
 
 hl.config({
 	input = {
@@ -55,6 +55,9 @@ hl.config({
 
 	misc = {
 		force_default_wallpaper = 0,
+		disable_hyprland_logo = true,
+		disable_splash_rendering = true,
+		vrr = 2,
 	},
 
 	xwayland = {

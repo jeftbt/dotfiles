@@ -241,18 +241,18 @@ background-blur = true
 ; waveform = 0
 
 [color]
-background = '#1e1e2e'
+background = '#0D0F12'
 
 gradient = 1
 
-gradient_color_1 = '#94e2d5'
-gradient_color_2 = '#89dceb'
-gradient_color_3 = '#74c7ec'
-gradient_color_4 = '#89b4fa'
-gradient_color_5 = '#cba6f7'
-gradient_color_6 = '#f5c2e7'
-gradient_color_7 = '#eba0ac'
-gradient_color_8 = '#f38ba8'
+gradient_color_1 = '#8FAF9A'
+gradient_color_2 = '#82A7A8'
+gradient_color_3 = '#849CB8'
+gradient_color_4 = '#8B9BB4'
+gradient_color_5 = '#9AAEC8'
+gradient_color_6 = '#9B8EAD'
+gradient_color_7 = '#C2A878'
+gradient_color_8 = '#B98282'
 
 
 [smoothing]

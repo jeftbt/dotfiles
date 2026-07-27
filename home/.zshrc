@@ -1,30 +1,54 @@
-# Clean & Minimal Zsh Configuration
+# ==============================================================================
+# MINIMAL & FAST ZSH CONFIGURATION
+# ==============================================================================
 
-# Path to your oh-my-zsh installation (if any)
-# export ZSH="$HOME/.oh-my-zsh"
-
-# Set history options
-HISTFILE=~/.zsh_history
+# 1. History (Geçmiş) Ayarları
+HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_space
 
-# Basic keybindings (using standard emacs mode keys)
+setopt appendhistory          # Geçmişi dosyaya ekleyerek kaydet
+setopt sharehistory           # Açık olan tüm terminaller arasında geçmişi anlık paylaş
+setopt hist_ignore_all_dups   # Mükerrer komutları geçmişe tekrar kaydetme
+setopt hist_ignore_space      # Başında boşluk bırakarak yazılan komutları geçmişe kaydetme
+setopt hist_reduce_blanks     # Komutlardaki gereksiz boşlukları temizleyip kaydet
+
+# 2. Tuş Atamaları (Emacs / Standart Mod)
 bindkey -e
+bindkey '^[[H' beginning-of-line  # Home tuşu
+bindkey '^[[F' end-of-line        # End tuşu
+bindkey '^[[3~' delete-char       # Delete tuşu
 
-# Autocompletion
+# 3. Gelişmiş Tamamlama (Completion) Sistemi
 autoload -Uz compinit
-compinit
+# Performans optimizasyonu: compinit'i günde sadece bir kez sıfırdan tara
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.m+1) ]]; then
+  compinit
+else
+  compinit -C
+fi
 
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insensitive
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"     # Match color scheme
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Büyük/küçük harf duyarsız tamamlama
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"     # ls renk düzeniyle tamamlama menüsü
+zstyle ':completion:*' menu select                         # Ok tuşlarıyla seçilebilir menü
 
-# Useful Aliases
+# 4. Ortam Değişkenleri (Environment Variables)
+export EDITOR="nvim"
+export VISUAL="nvim"
+export PAGER="less"
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# PATH Güncellemeleri (Spicetify ve yerel ikilik dosyalar dahil)
+typeset -U path # PATH içinde mükerrer kayıt oluşmasını engeller
+path=(
+  "$HOME/.local/bin"
+  "$HOME/.spicetify"
+  $path
+)
+export PATH
+
+# 5. Temel Alias'lar
 alias ls="ls --color=auto"
 alias ll="ls -lah"
 alias l="ls -la"
@@ -35,7 +59,7 @@ alias c="clear"
 alias h="history"
 alias ff="clear && fastfetch"
 
-# Git Aliases
+# Git & Paket Yöneticisi Alias'ları
 alias gs="git status"
 alias gd="git diff"
 alias ga="git add"
@@ -43,33 +67,40 @@ alias gc="git commit -m"
 alias gp="git push"
 alias gl="git log --oneline -n 10"
 
-# Package Manager Shortcut
-alias yay-install="yay -S"
-alias yay-update="yay -Syu"
-alias yay-remove="yay -Rns"
+alias pi="sudo pacman -S"
+alias ps="sudo pacman -Ss"
+alias pr="sudo pacman -Rns"
+alias pu="sudo pacman -Syu"
 
-# Environment Variables
-export EDITOR="nvim"
-export VISUAL="nvim"
-export PAGER="less"
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
+alias yi="yay -S"
+alias ys="yay -Ss"
+alias yr="yay -Rns"
+alias yu="yay -Syu"
 
-# Add local bin to PATH
-export PATH="$HOME/.local/bin:$PATH"
+alias power="powerprofilesctl"
+alias psaver="powerprofilesctl set power-saver"
+alias pbalanced="powerprofilesctl set balanced"
+alias pmax="powerprofilesctl set performance"
 
-# Initialize Starship Prompt (if installed)
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+alias sysclean="sudo pacman -Rns \$(pacman -Qtdq 2>/dev/null) --noconfirm 2>/dev/null; yay -Sc --noconfirm"
+
+# 6. Prompt (Starship entegrasyonu & Yedek Prompt)
 if command -v starship &>/dev/null; then
+    export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
     eval "$(starship init zsh)"
 else
-    # Simple backup prompt if starship is not installed
-    PROMPT="%F{cyan}%n%f@%F{blue}%m%f:%F{green}%~%f$ "
+    PROMPT='%F{cyan}%n%f@%F{blue}%m%f:%F{green}%~%f$ '
 fi
 
-# Plugins (installed via pacman/yay)
-[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && \
+# 7. Sistem Eklentileri (Pacman/Yay ile kurulu olanlar)
+# Otomatik Öneri (Autosuggestions)
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-export PATH=$PATH:~/.spicetify
+fi
+
+# Sözdizimi Renklendirme (Syntax Highlighting - Her zaman en sonda yüklenmeli)
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+export PATH="$HOME/path/to/helix/directory:$PATH"
+alias hx='helix'

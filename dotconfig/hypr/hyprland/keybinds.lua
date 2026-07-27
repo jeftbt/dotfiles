@@ -2,15 +2,18 @@
 local mainMod = "ALT"
 
 -- Default Applications
-local terminal = "ghostty"
+local terminal = "alacritty"
 local browser = "zen-browser"
-local fileManager = "ghostty -e yazi"
+local fileManager = "alacritty -e yazi"
+local editor = "helix"
+local notes = "obsidian"
 
 -- Application Launchers & Shortcuts
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("~/.config/rofi/launchers/type-1/launcher.sh"))
-hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd("rofi -show window"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(editor))
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd(notes))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("hyprlauncher"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("wlogout -b 3"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
@@ -19,14 +22,18 @@ hl.bind(mainMod .. " + W", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("waypaper"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -p '>' | cliphist decode | wl-copy"))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("cliphist wipe && notify-send 'Clipboard' 'History Cleared' -u low"))
 hl.bind(
 	mainMod .. " + P",
 	hl.dsp.exec_cmd('grim -g "$(slurp)" - | tee ~/Pictures/screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | wl-copy')
 )
 hl.bind("Print", hl.dsp.exec_cmd("grim - | tee ~/Pictures/screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | wl-copy"))
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
-hl.bind(mainMod .. " + up", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
+hl.bind(mainMod .. " + SHIFT + up", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("hyprpicker"))
+hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("hyprsysteminfo"))
+-- geçici waybar yenileme kısayolu
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("killall waybar && waybar &"))
 
 -- Night Mode (hyprsunset) toggle
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle-nightmode.sh"))

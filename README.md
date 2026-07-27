@@ -1,74 +1,33 @@
-# Clean Dotfiles Starter Kit
+# Dotfiles
 
-A clean, minimalist configuration starting point for Arch Linux running Hyprland. Built from scratch to replace pre-packaged, bloated setups.
+Clean and minimalist configuration files for Arch Linux running Hyprland.
 
-## Structure
+## Applications Used
 
-```text
-├── dotconfig/            # Configs that go to ~/.config/
-│   ├── dunst/            # Notification Daemon
-│   │   └── dunstrc
-│   ├── fastfetch/        # System Info Display
-│   │   └── config.jsonc
-│   ├── gtk-3.0/          # GTK3 Dark Theme
-│   │   └── settings.ini
-│   ├── gtk-4.0/          # GTK4 Dark Theme
-│   │   └── settings.ini
-│   ├── hypr/             # Hyprland Window Manager
-│   │   ├── hyprland.conf
-│   │   ├── hyprpaper.conf
-│   │   ├── hyprlock.conf
-│   │   └── hypridle.conf
-│   ├── ghostty/          # Ghostty Terminal
-│   │   └── config.ghostty
-│   ├── rofi/             # Application Launcher (drun/run)
-│   │   └── config.rasi
-│   ├── starship/         # Starship Prompt
-│   │   └── starship.toml
-│   └── waybar/           # Top Status Bar
-│       ├── config.jsonc
-│       └── style.css
-├── home/                 # Configs that go directly to ~/ (home folder)
-│   └── .zshrc            # Clean shell config
-└── install.sh            # Setup & symlink script (with automatic backups)
-```
+- **Window Manager:** Hyprland
+- **Terminal:** Alacritty
+- **Status Bar:** Waybar
+- **Application Launcher:** Rofi
+- **Notification Daemon:** Dunst
+- **Wallpaper & Screen Lock:** Hyprpaper, Hyprlock, Hypridle
+- **Shell & Prompt:** Zsh, Starship
+- **File Manager:** Yazi
+- **System Info Display:** Fastfetch
+- **Screenshot & Clipboard:** Grim, Slurp, Cliphist
+- **Audio & Brightness Control:** Pamixer, Brightnessctl
+- **Theme:** GTK3 / GTK4 Dark Theme
 
-## How to Install
+## Keybindings
 
-Run the following one-liner in your terminal to clone the repository and launch the setup:
-
-```bash
-git clone https://github.com/jeftbt/dotfiles.git ~/dotfiles && cd ~/dotfiles && ./install.sh
-```
-
-Or manually:
-
-1. Clone the repository to `~/dotfiles`:
-   ```bash
-   git clone https://github.com/jeftbt/dotfiles.git ~/dotfiles
-   ```
-2. Navigate to the folder and run the setup script:
-   ```bash
-   cd ~/dotfiles
-   ./install.sh
-   ```
-3. The script will:
-   - Check and prompt to install missing applications.
-   - Detect existing configurations, back them up to `~/.config/cfg_backups/`, and replace them with symlinks to this directory.
-   - Ask to enable SDDM as your login manager if it's installed.
-
-## Keybindings (Default)
-
-- **SUPER + T**: Open Ghostty Terminal
-- **SUPER + A**: Open adi1090x Rofi Launcher (Apps)
-- **SUPER + Tab**: Open Rofi Window Switcher
-- **SUPER + E**: Open Yazi File Manager (runs in Ghostty)
-- **SUPER + Q**: Close active window
-- **SUPER + W**: Toggle floating window
-- **SUPER + SHIFT + W**: Wallpaper Selector (WallRizz TUI)
-- **SUPER + F**: Toggle fullscreen
-- **SUPER + V**: Clipboard History (Cliphist)
-- **SUPER + P**: Screenshot selection (grim + slurp → clipboard & file)
-- **Print**: Screenshot all screens (→ clipboard & file)
-- **SUPER + Delete**: Exit Hyprland
-- **Volume / Brightness Keys**: Working out-of-the-box (uses `pamixer` and `brightnessctl`)
+- **SUPER + T:** Open Alacritty Terminal
+- **SUPER + A:** Open Rofi Application Launcher
+- **SUPER + Tab:** Open Rofi Window Switcher
+- **SUPER + E:** Open Yazi File Manager
+- **SUPER + Q:** Close Active Window
+- **SUPER + W:** Toggle Floating Window
+- **SUPER + SHIFT + W:** Wallpaper Selector
+- **SUPER + F:** Toggle Fullscreen Mode
+- **SUPER + V:** Clipboard History (Cliphist)
+- **SUPER + P:** Screenshot Selection (Grim + Slurp)
+- **Print:** Screenshot Entire Screen
+- **SUPER + Delete:** Exit Hyprland
