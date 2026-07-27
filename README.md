@@ -2,6 +2,30 @@
 
 Clean and minimalist configuration files for Arch Linux running Hyprland.
 
+## Installation / Kurulum
+
+To install the dotfiles and required packages automatically, clone the repository and run `install.sh`:
+
+```bash
+git clone https://github.com/jeftbt/dotfiles.git
+cd dotfiles
+chmod +x install.sh
+./install.sh
+```
+
+### Automatic Setup Details / Kurulum Detayları
+
+The script performs the following actions:
+1. **Installs required packages:**
+   ```bash
+   sudo pacman -S --needed hyprland hyprpaper hyprlock hypridle hyprsunset \
+     alacritty waybar dunst zsh starship yazi fastfetch grim slurp cliphist \
+     pamixer brightnessctl cava helix
+   ```
+2. **Deploys configuration files:**
+   - Copies `dotconfig/*` to `~/.config/`
+   - Copies `home/*` to `~/`
+
 ## Applications Used
 
 - **Window Manager:** Hyprland
