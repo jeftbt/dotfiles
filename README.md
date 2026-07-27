@@ -7,7 +7,7 @@ Clean and minimalist configuration files for Arch Linux running Hyprland.
 - **Window Manager:** Hyprland
 - **Terminal:** Alacritty
 - **Status Bar:** Waybar
-- **Application Launcher:** Rofi
+- **Application Launcher:** Hyprlauncher
 - **Notification Daemon:** Dunst
 - **Wallpaper & Screen Lock:** Hyprpaper, Hyprlock, Hypridle
 - **Shell & Prompt:** Zsh, Starship
@@ -20,8 +20,7 @@ Clean and minimalist configuration files for Arch Linux running Hyprland.
 ## Keybindings
 
 - **SUPER + T:** Open Alacritty Terminal
-- **SUPER + A:** Open Rofi Application Launcher
-- **SUPER + Tab:** Open Rofi Window Switcher
+- **SUPER + A:** Open Hyprlauncher
 - **SUPER + E:** Open Yazi File Manager
 - **SUPER + Q:** Close Active Window
 - **SUPER + W:** Toggle Floating Window
