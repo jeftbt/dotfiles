@@ -28,17 +28,19 @@ The script performs the following actions:
 
 ## Applications Used
 
-- **Window Manager:** Hyprland
-- **Terminal:** Alacritty
-- **Status Bar:** Waybar
-- **Application Launcher:** Hyprlauncher
-- **Notification Daemon:** Dunst
-- **Wallpaper & Screen Lock:** Hyprpaper, Hyprlock, Hypridle
-- **Shell & Prompt:** Zsh, Starship
-- **File Manager:** Yazi
-- **System Info Display:** Fastfetch
-- **Screenshot & Clipboard:** Grim, Slurp, Cliphist
-- **Audio & Brightness Control:** Pamixer, Brightnessctl
+- **Window Manager:** [Hyprland](https://github.com/hyprwm/Hyprland)
+- **Terminal:** [Alacritty](https://github.com/alacritty/alacritty)
+- **Status Bar:** [Waybar](https://github.com/Alexays/Waybar)
+- **Application Launcher:** [Hyprlauncher](https://github.com/hyprwm/hyprlauncher)
+- **Notification Daemon:** [Dunst](https://github.com/dunst-project/dunst)
+- **Wallpaper & Screen Lock:** [Hyprpaper](https://github.com/hyprwm/hyprpaper), [Hyprlock](https://github.com/hyprwm/hyprlock), [Hypridle](https://github.com/hyprwm/hypridle)
+- **Shell & Prompt:** [Zsh](https://github.com/zsh-users/zsh), [Starship](https://github.com/starship/starship)
+- **File Manager:** [Yazi](https://github.com/sxyazi/yazi)
+- **System Info Display:** [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
+- **Screenshot & Clipboard:** [Grim](https://github.com/emersion/grim), [Slurp](https://github.com/emersion/slurp), [Cliphist](https://github.com/sentriz/cliphist)
+- **Text Editor:** [Helix](https://github.com/helix-editor/helix)
+- **Audio & Brightness Control:** [Pamixer](https://github.com/cdemoulins/pamixer), [Brightnessctl](https://github.com/Hummer666/brightnessctl)
+- **Audio Visualizer:** [Cava](https://github.com/karlstav/cava)
 - **Theme:** GTK3 / GTK4 Dark Theme
 
 ## Keybindings
