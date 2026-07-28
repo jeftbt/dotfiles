@@ -33,8 +33,8 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"     # ls renk düzeniyle
 zstyle ':completion:*' menu select                         # Ok tuşlarıyla seçilebilir menü
 
 # 4. Ortam Değişkenleri (Environment Variables)
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="hx"
+export VISUAL="hx"
 export PAGER="less"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
@@ -49,6 +49,8 @@ path=(
 export PATH
 
 # 5. Temel Alias'lar
+alias hx="helix"
+
 alias ls="ls --color=auto"
 alias ll="ls -lah"
 alias l="ls -la"
@@ -67,15 +69,15 @@ alias gc="git commit -m"
 alias gp="git push"
 alias gl="git log --oneline -n 10"
 
-alias pi="sudo pacman -S"
-alias ps="sudo pacman -Ss"
-alias pr="sudo pacman -Rns"
-alias pu="sudo pacman -Syu"
+alias si="sudo pacman -S"
+alias ss="sudo pacman -Ss"
+alias sr="sudo pacman -Rns"
+alias su="sudo pacman -Syu"
 
-alias yi="yay -S"
-alias ys="yay -Ss"
-alias yr="yay -Rns"
-alias yu="yay -Syu"
+alias pi="paru -S"
+alias ps="paru -Ss"
+alias pr="paru -Rns"
+alias pu="paru -Syu"
 
 alias power="powerprofilesctl"
 alias psaver="powerprofilesctl set power-saver"
@@ -102,5 +104,3 @@ fi
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
-export PATH="$HOME/path/to/helix/directory:$PATH"
-alias hx='helix'
