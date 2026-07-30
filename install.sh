@@ -5,7 +5,7 @@ set -e
 echo "==> Gerekli paketler yükleniyor..."
 sudo pacman -S --needed hyprland hyprpaper hyprlock hypridle hyprsunset \
   alacritty waybar dunst zsh starship yazi fastfetch grim slurp cliphist \
-  pamixer brightnessctl cava helix
+  pamixer brightnessctl cava helix nmtui blueman
 
 echo "==> Konfigürasyon dosyaları ~/.config dizinine kopyalanıyor..."
 mkdir -p ~/.config
