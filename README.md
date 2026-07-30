@@ -13,6 +13,20 @@ chmod +x install.sh
 ./install.sh
 ```
 
+> [!NOTE]
+> **Hybrid Graphics (Intel + NVIDIA) Setup:**
+> This configuration relies on the Intel iGPU by default for desktop rendering (for lower power consumption and maximum system stability).
+> 
+> * **NVIDIA Rendering:** If you prefer to force full desktop rendering on the NVIDIA dGPU instead, you can add the following lines to `.config/hypr/hyprland/env.lua`:
+>   ```lua
+>   hl.env("LIBVA_DRIVER_NAME", "nvidia")
+>   hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+>   ```
+> * **Boot Stability (Early KMS):** To prevent boot delays or blank screens, make sure the `i915` module is loaded before NVIDIA modules in `/etc/mkinitcpio.conf`:
+>   ```sh
+>   MODULES=(i915 nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+>   ```
+
 ### Automatic Setup Details
 
 The script performs the following actions:
