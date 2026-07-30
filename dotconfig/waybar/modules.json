@@ -21,14 +21,14 @@
         "format-ethernet": "󰈀",
         "format-disconnected": "󰤮",
         "tooltip-format": "{essid} ({signalStrength}%)",
-        "on-click": "alacritty -e impala"
+        "on-click": "alacritty -e nmtui"
     },
     "bluetooth": {
         "format": "󰂯",
         "format-disabled": "󰂲",
         "format-connected": "󰂱",
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "on-click": "alacritty -e bluetui"
+        "on-click": "gtk-launch blueman-manager"
     },
     "tray": {
         "icon-size": 14,
