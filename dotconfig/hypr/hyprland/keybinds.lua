@@ -1,5 +1,5 @@
 -- Keybindings (Standard Binds)
-local mainMod = "ALT"
+local mainMod = "SUPER"
 
 -- Default Applications
 local terminal = "alacritty"
