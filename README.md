@@ -2,7 +2,7 @@
 
 Clean and minimalist configuration files for Arch Linux running Hyprland.
 
-## Installation / Kurulum
+## Installation
 
 To install the dotfiles and required packages automatically, clone the repository and run `install.sh`:
 
@@ -13,7 +13,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-### Automatic Setup Details / Kurulum Detayları
+### Automatic Setup Details
 
 The script performs the following actions:
 1. **Installs required packages:**
