@@ -67,7 +67,6 @@ The script performs the following actions:
 - **SUPER + E:** Open Yazi File Manager
 - **SUPER + Q:** Close Active Window
 - **SUPER + W:** Toggle Floating Window
-- **SUPER + SHIFT + W:** Wallpaper Selector
 - **SUPER + F:** Toggle Fullscreen Mode
 - **SUPER + V:** Clipboard History (Cliphist)
 - **SUPER + P:** Screenshot Selection (Grim + Slurp + Satty)
