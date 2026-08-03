@@ -1,12 +1,10 @@
 -- Core System Configuration Table
-local colors = require("themes.theme")
-
 hl.config({
 	input = {
 		kb_layout = "tr",
 		kb_variant = "",
 		kb_model = "",
-		kb_options = "",
+		kb_options = "altwin:swap_lalt_lwin",
 		kb_rules = "",
 		follow_mouse = 1,
 		touchpad = {
@@ -20,8 +18,8 @@ hl.config({
 		gaps_out = 7,
 		border_size = 1,
 		col = {
-			active_border = colors.surface1,
-			inactive_border = colors.base,
+			active_border = "rgb(45475a)",
+			inactive_border = "rgb(0d0f12)",
 		},
 		layout = "dwindle",
 		allow_tearing = false,

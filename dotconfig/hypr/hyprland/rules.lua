@@ -1,32 +1,3 @@
--- Layer Rules (Blur for Waybar, Dunst, Hyprlauncher, Hyprshutdown)
-hl.layer_rule({
-	match = { namespace = "hyprlauncher" },
-	blur = true,
-})
-
-hl.layer_rule({
-	match = { namespace = "hyprshutdown" },
-	blur = true,
-})
-
-hl.layer_rule({
-	match = { namespace = "wlogout" },
-	blur = true,
-})
-
-hl.layer_rule({
-	match = { namespace = "waybar" },
-	blur = true,
-	ignore_alpha = 0.1,
-})
-
-hl.layer_rule({
-	match = { namespace = "notifications" },
-	blur = true,
-	ignore_alpha = 0.5,
-})
-
--- Window Rules
 hl.window_rule({
 	-- Suppress maximize requests from all apps
 	name = "suppress-maximize-events",
@@ -66,6 +37,47 @@ hl.window_rule({
 	opacity = 0.0,
 })
 
+hl.window_rule({
+	name = "satty-floating",
+	match = {
+		class = ".*[Ss]atty.*",
+	},
+	float = true,
+	center = true,
+})
 
+hl.window_rule({
+	name = "picture-in-picture",
+	match = {
+		title = "^(Picture-in-Picture)$",
+	},
+	float = true,
+	pin = true,
+})
+
+hl.window_rule({
+	name = "system-floating-tools",
+	match = {
+		class = "^(pavucontrol|blueman-manager|nm-connection-editor)$",
+	},
+	float = true,
+})
+
+-- Smart gaps / Single application fullscreen rules (Tek uygulama varken tam ekran / boşluksuz yapma)
+hl.workspace_rule({
+	workspace = "w[tv1]",
+	gaps_in = 0,
+	gaps_out = 0,
+	border_size = 0,
+	no_rounding = true,
+})
+
+hl.workspace_rule({
+	workspace = "f[1]",
+	gaps_in = 0,
+	gaps_out = 0,
+	border_size = 0,
+	no_rounding = true,
+})
 
 

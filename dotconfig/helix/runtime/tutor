@@ -1,0 +1,1475 @@
+ 
+
+
+       .
+       ###x.        .|
+       d#####x,   ,v||
+        '+#####v||||||
+           ,v|||||+'.      _     _           _
+        ,v|||||^'>####    | |   | |   ___   | | (_) __  __
+       |||||^'  .v####    | |___| |  /   \  | |  _  \ \/ /
+       ||||=..v#####P'    |  ___  | /  ^  | | | | |  \  /
+       ''v'>#####P'       | |   | | |  ---  | | | |  /  \
+       ,######/P||x.      |_|   |_|  \___/  |_| |_| /_/\_\
+       ####P' "x|||||,
+       |/'       'x|||    Post-modern mod tabanlı metin düzenleyici.
+        '           '|
+
+
+                 Helix eğitimine hoş geldiniz!
+        Giriş bölümüne ulaşana kadar j tuşuna basılı tutun.
+
+
+
+=================================================================
+=                            GİRİŞ                              =
+=================================================================
+
+ Helix editörüne hoş geldiniz! Helix, alışık olabileceğiniz
+ editörlerden farklıdır çünkü mod tabanlıdır (modal); yani metin
+ düzenlemek için farklı modlara sahiptir. Kullanacağınız temel
+ modlar Normal mod ve Ekleme (Insert) modudur. Normal moddayken
+ bastığınız tuşlar metin yazmaz; bunun yerine metin üzerinde
+ çeşitli eylemleri gerçekleştirir. Bu, daha verimli düzenleme
+ yapmanızı sağlar. Bu eğitim size Helix'in mod tabanlı düzenleme
+ özelliklerini nasıl kullanacağınızı öğretecektir. Başlamak için
+ CapsLock tuşunuzun basılı olmadığından emin olun ve ilk derse
+ ulaşana kadar j tuşuna basılı tutun.
+
+
+
+
+
+
+
+
+=================================================================
+=                  1.1 TEMEL İMLEÇ HAREKETLERİ                  =
+=================================================================
+
+          ↑
+          k       * h soldadır
+      ← h   l →   * l sağdadır
+          j       * j aşağı oku çağrıştırır
+          ↓
+
+ İmleç yukarıdaki gibi h, j, k, l tuşları ile hareket
+ ettirilebilir. İmleç / ok tuşları da çalışır ancak hjkl tuşları
+ elinizin altındaki diğer tuşlara daha yakın olduğu için
+ kullanmak daha hızlıdır. hjkl tuşlarına alışmak için etrafta
+ gezinmeyi deneyin. Hazır olduğunuzda bir sonraki derse geçmek
+ için j tuşuna basılı tutun.
+
+
+
+
+
+
+
+=================================================================
+=                      1.2 HELIX'TEN ÇIKIŞ                      =
+=================================================================
+
+ 1. Komut moduna girmek için : tuşuna basın. İmleciniz ekranın
+    en altına geçecektir.
+ 2. Helix'ten çıkmak için q veya quit yazıp Enter'a basın.
+
+ Not: Kaydedilmemiş değişiklikler varsa quit komutu başarısız olur.
+       Zorla çıkmak ve bu değişiklikleri İPTAL ETMEK için q! veya quit! yazın.
+       Dosyaları nasıl kaydedeceğinizi ileride öğreneceksiniz.
+
+ Komut modundan bir komut girmeden çıkmak için Escape tuşuna basın.
+
+ Şimdi bir sonraki derse geçin.
+
+
+
+
+
+
+
+=================================================================
+=                         1.3 SİLME                             =
+=================================================================
+
+ İmlecin altındaki karakteri silmek için d tuşuna basın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. İmleci her bir fazla karaktere getirin ve silmek için d tuşuna
+    basın.
+
+ --> Buu cümmlede fazllalık kkarakterllerr varr.
+     Bu cümlede fazlalık karakterler var.
+
+ Cümle doğru hale geldiğinde bir sonraki derse geçin.
+
+
+
+
+
+
+
+
+=================================================================
+=                       1.4 EKLEME MODU                         =
+=================================================================
+
+ Ekleme moduna girmek için i tuşuna basın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. Satırda metin eksik olan bir yere gelin ve Ekleme moduna girmek
+    için i yazın. Bastığınız tuşlar artık metin yazacaktır.
+ 3. Eksik metni girin.
+ 4. Ekleme modundan çıkıp Normal moda dönmek için Escape'e basın.
+ 5. Satır aşağıdaki satırla eşleşene kadar tekrarlayın.
+
+ --> Bu cüde me eks.
+     Bu cümlede bazı metinler eksik.
+
+ Not: Durum çubuğu mevcut modunuzu gösterir.
+       i tuşuna bastığınızda 'NOR' ifadesinin 'INS' olarak değiştiğine dikkat edin.
+
+
+
+
+=================================================================
+=                      1.5 DOSYA KAYDETME                       =
+=================================================================
+
+ Bir dosyayı kaydetmek için :w / :write yazın.
+
+ 1. Daha önce açıklandığı gibi :q! kullanarak Helix'ten çıkın veya
+    yeni bir terminal açın.
+ 2. Helix'te bir dosya açmak için şunu çalıştırın: hx DOSYA_ADI
+ 3. Dosyada bazı düzenlemeler yapın.
+ 4. Komut moduna girmek için : tuşuna basın.
+ 5. Dosyayı kaydetmek için w veya write yazıp Enter'a basın.
+
+ Kaydedip çıkmak için wq veya write-quit de yazabilirsiniz.
+
+ Not: O yola kaydetmek için w / write komutundan sonra isteğe
+       bağlı bir dosya yolu girebilirsiniz.
+ Not: Bir dosyada kaydedilmemiş değişiklikler varsa, durum çubuğunda
+       dosya adının yanında bir artı [+] işareti görünür.
+
+
+
+=================================================================
+=                        BÖLÜM 1 ÖZETİ                          =
+=================================================================
+
+ * İmleci hareket ettirmek için h,j,k,l tuşlarını kullanın.
+
+ * Komut moduna girmek için : tuşuna basın.
+   * q / quit ve q! / quit! komutları Helix'ten çıkar. İlki
+     kaydedilmemiş değişiklikler varsa başarısız olur. İkincisi
+     değişiklikleri iptal eder.
+   * w / write komutu dosyayı kaydeder.
+   * wq / write-quit komutu her ikisini de yapar.
+
+ * İmleçteki karakteri silmek için d yazın.
+
+ * Ekleme moduna girmek ve metin yazmak için i yazın. Normal moda
+   dönmek için Escape'e basın.
+
+
+
+
+
+=================================================================
+=                   2.1 DİĞER EKLEME KOMUTLARI                  =
+=================================================================
+
+ Gördüğünüz gibi imlecin bulunduğu konumda Ekleme moduna girmek
+ için i yazabilirsiniz. Farklı konumlarda Ekleme moduna girmenin
+ başka yolları da vardır.
+
+ Yaygın ekleme komutları örnekleri:
+   i - Seçimden önce ekle.
+   a - Seçimden sonra ekle. (a 'append' / ekle anlamına gelir)
+   I - Satırın başında ekle.
+   A - Satırın sonunda ekle.
+
+ 1. Aşağıda '-->' ile işaretlenmiş satırın herhangi bir yerine gelin.
+ 2. A (Shift-a) yazın, imleciniz satırın sonuna gidecek ve
+    yazabileceksiniz.
+ 3. Aşağıdaki satırla eşleşmesi için gerekli metni yazın.
+
+ --> Bu cümlede eksik
+     Bu cümlede eksik bazı kelimeler var.
+
+=================================================================
+=                      2.2 SATIR AÇMA                           =
+=================================================================
+
+ İmlecin altına yeni bir satır ekleyip yazmak için o yazın.
+ İmlecin üstüne yeni bir satır ekleyip yazmak için O yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. Altına bir satır açmak ve yanıtınızı yazmak için o yazın.
+
+ --> En iyi metin düzenleyici hangisidir?-----------
+
+
+
+
+
+
+
+
+
+
+
+=================================================================
+=                        BÖLÜM 2 ÖZETİ                          =
+=================================================================
+
+ * Seçimin sonuna eklemek için a yazın.
+
+ * Satırın başındaki ilk boşluk olmayan karakterde Ekleme moduna
+   girmek için I yazın.
+
+ * Satırın sonunda Ekleme moduna girmek için A yazın.
+
+ * Sırasıyla imlecin altına ve üstüne yeni satır açmak için o ve O kullanın.
+
+
+
+
+
+
+
+
+
+
+=================================================================
+=                  3.1 HAREKETLER VE SEÇİMLER                   =
+=================================================================
+
+ Bir sonraki kelimeye kadar seçmek için w yazın.
+
+ d tuşu aslında sadece imleçteki karakteri silmez, seçili tüm metni
+ siler. İmleciniz tek karakterlik bir seçim gibidir.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. Silinmesi gereken bir kelimenin başına gelin.
+ 3. Sonraki kelimenin başına kadar seçmek için w yazın.
+ 4. Seçimi silmek için d yazın.
+ 5. Satırdaki tüm fazla kelimeler için tekrarlayın.
+
+ --> Bu cümlede süpürge fazladan kelimeler sandalye var.
+     Bu cümlede fazladan kelimeler var.
+
+
+
+
+=================================================================
+=                     3.2 DİĞER HAREKETLER                      =
+=================================================================
+
+ Gördüğünüz gibi w yazmak imleci bir sonraki kelimenin başına kadar
+ ilerletir ve geçilen metni seçer. Bu, metin içinde gezinmek ve işlem
+ yapılacak metni seçmek için kullanışlıdır.
+
+ Bazı yaygın hareketler:
+   w - Bir sonraki kelimenin başlangıcına kadar ilerle.
+   e - Mevcut kelimenin sonuna kadar ilerle.
+   b - Mevcut kelimenin başlangıcına kadar gerile.
+
+ İmlecin altındaki kelimeyi seçmek için e ve b birleştirilebilir.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. Bir 'D' harfine gelin.
+ 3. Kelimenin yarısını seçmek için e yazın.
+ 4. Kalanını seçmek için b yazın.
+
+--> Orta Dünya Ülkesi.
+
+=================================================================
+=               3.3 KELİMELER VE KELİME GRUPLARI                =
+=================================================================
+
+ w,e,b hareketlerinin KELİME (WORD) yerine kelime (word) gezinen
+ W,E,B karşılıkları da vardır. KELİMELER (WORDS) yalnızca boşluklarla
+ ayrılırken, kelimeler (words) boşluğun yanı sıra diğer karakterlerle
+ de ayrılabilir.
+
+ 1. İmleci '-->' ile işaretlenmiş satırın başına getirin.
+ 2. Satırın sonuna ulaşana kadar tek tek kelimeleri seçmek için üst üste w yazın.
+ 3. 'bir-tane-örnek' ifadesinin 5 tuş vuruşu gerektirdiğini unutmayın.
+    '"modal"' ifadesi 3 tuş vuruşu gerektirdi.
+ 4. İmleci tekrar '-->' ile işaretli satırın başına getirin.
+ 5. Tek tek KELİMELERİ (WORDS) seçmek için üst üste W yazın.
+ 6. 'bir-tane-örnek' ve '"modal"' ifadelerinin her ikisinin de tek bir
+    tuş vuruşuyla seçildiğine dikkat edin.
+
+--> Helix bir-tane-örnek "modal" metin düzenleyicidir
+
+
+=================================================================
+=                    3.4 DEĞİŞTİRME KOMUTU                      =
+=================================================================
+
+ Mevcut seçimi değiştirmek için c yazın.
+
+ Değiştirme komutu mevcut seçimi siler ve Ekleme moduna girer,
+ bu yüzden di işleminin çok yaygın bir kısayoludur.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. Yanlış bir kelimenin başına gelin ve seçmek için e yazın.
+ 3. Kelimeyi silip Ekleme moduna girmek için c yazın.
+ 4. Doğru kelimeyi yazın.
+ 5. Satır aşağıdaki satırla eşleşene kadar tekrarlayın.
+
+ --> Bu kağıtta ağır kelimeler arkasında var.
+     Bu cümlede yanlış kelimeler içinde var.
+
+
+
+
+=================================================================
+=                  3.5 HAREKETLERLE SAYAÇ KULLANIMI             =
+=================================================================
+
+ Bir hareketi o kadar kez tekrarlamak için hareketten önce bir sayı yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. 2 kelime ileri gitmek için 2w yazın.
+ 3. Üçüncü kelimenin sonuna gitmek için 3e yazın.
+ 4. 2 kelime geri gitmek için 2b yazın.
+ 5. Yukarıdakileri farklı sayılarla deneyin.
+
+ --> Bu sadece içinde gezinebileceğiniz kelimeler olan bir satırdır.
+
+
+
+
+
+
+
+
+
+=================================================================
+=                    3.6 SEÇİM / UZATMA MODU                    =
+=================================================================
+
+ Seçim moduna girmek için v yazın.
+ Normal moda dönmek için tekrar v yazın veya Escape'e basın.
+ Seçim modunda her hareket, seçimi değiştirmek yerine seçimi uzatır.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. FOO kelimesinin F harfine gelin ve iki kelimeyi seçmek için v2w yazın.
+ 3. İki kelimeyi kaldırmak için d yazın. d tuşunun sizi Normal moda
+    döndürdüğüne dikkat edin.
+ 4. BAZ kelimesinin B harfine gelin ve silmek için diziyi tekrarlayın.
+
+ --> Bu satırdan FOO BAR gereksiz kelimeleri BAZ BIZ çıkarın.
+
+
+
+
+
+
+=================================================================
+=                     3.7 SATIRLARI SEÇME                       =
+=================================================================
+
+ Tüm bir satırı seçmek için x yazın. Sonraki satırı da eklemek için tekrar x yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş ikinci satıra getirin.
+ 2. Satırı seçmek için x, silmek için d yazın.
+ 3. Dördüncü satıra gelin.
+ 4. 2 satırı seçmek için iki kez x veya 2x yazın ve silmek için d tuşuna basın.
+
+ --> 1) Güller kırmızıdır,
+ --> 2) Çamur eğlencelidir,
+ --> 3) Menekşeler melektir,
+ --> 4) Bir arabam var,
+ --> 5) Saatler zamanı gösterir,
+ --> 6) Şeker tatlıdır,
+ --> 7) Ve sen de öylesin.
+
+ Not: X tuşu x'e benzer şekilde çalışır ancak sonraki satırlara uzamaz.
+       Boş bir satırda X hiçbir şey yapmaz.
+
+=================================================================
+=                   3.8 SEÇİMLERİ DARALTMA                      =
+=================================================================
+
+ Seçimleri tek imleçlere daraltmak için ; yazın.
+
+ Bazen imleçleri hareket ettirmek zorunda kalmadan seçimi kaldırmak istersiniz.
+ Bu ; tuşu kullanılarak yapılabilir.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. Satırda gezinmek için öğrendiğiniz hareketleri kullanın ve hareketlerle
+    seçildikten sonra metnin seçimini kaldırmak için ; kullanmayı deneyin.
+
+ --> Bu içinde gezinilecek kelimeler olan hatasız bir satırdır.
+
+ Not: Bu Seçim modunda da aynı şekilde çalışır.
+ Not: İlgili diğer bir komut Alt-; tuşudur, bu komut seçimin yönünü çevirir
+       (imleç ve çapa konumunu yer değiştirir).
+
+
+
+=================================================================
+=                        BÖLÜM 3 ÖZETİ                          =
+=================================================================
+
+ * Sonraki kelimeye kadar seçmek için w yazın.
+   * Mevcut kelimenin sonuna kadar seçmek için e yazın.
+   * Mevcut kelimenin başına kadar geri seçmek için b yazın.
+   * KELİMELERİ (WORDS) gezmek için büyük harfli karşılıklarını (W,E,B) kullanın.
+
+ * Tüm seçimi silmek için d yazın.
+   * Seçimi silip Ekleme moduna girmek için c yazın.
+
+ * Bir hareketi o kadar kez tekrarlamak için hareketten önce bir sayı yazın.
+
+ * Tüm hareketlerin seçimi uzattığı Seçim moduna girmek için v yazın.
+
+ * Mevcut satırın tamamını seçmek için x yazın. Sonraki satırı seçmek
+   için tekrar x yazın.
+
+ * Seçimi daraltmak için noktalı virgül ( ; ) yazın.
+
+=================================================================
+=                         4.1 GERİ ALMA                         =
+=================================================================
+
+ Geri almak için u yazın. İleri almak (yinelemek) için U yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. İlk hataya gelin ve silmek için d yazın.
+ 3. Silme işleminizi geri almak için u yazın.
+ 4. Satırdaki tüm hataları düzeltin.
+ 5. Düzeltmelerinizi geri almak için birkaç kez u yazın.
+ 6. Düzeltmelerinizi yinelemek için birkaç kez U (Shift-u) yazın.
+
+ --> Buu satırdakki hataları düzzelttin ve ggeri almayla deekştirin.
+
+
+
+
+
+
+
+
+=================================================================
+=                 4.2 METİN KOPYALAMA VE YAPIŞTIRMA             =
+=================================================================
+
+ Seçimi kopyalamak (yank) için y yazın.
+ Kopyalanan seçimi imleçten sonraya yapıştırmak için p yazın.
+ Kopyalanan metni imleçten önceye yapıştırmak için P yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+    İmlecinizin "elma" kelimesinin "e" harfinde olduğundan emin olun.
+ 2. "elma" kelimesini seçmek için w ve kopyalamak için y yazın.
+ 3. "2" ile "3" arasındaki boşluğa gelin ve yapıştırmak için p yazın.
+ 4. "3" ile "4" arasında tekrarlayın.
+
+ --> 1 elma 2 3 4
+     1 elma 2 elma 3 elma 4
+
+ Not: Metni her sildiğinizde veya değiştirdiğinizde Helix değiştirilen
+       metni kopyalar. Bundan kaçınmak için Alt-d / Alt-c kullanın.
+ Not: Helix varsayılan olarak sistem panosunu paylaşmaz. Sistem panosuna
+       kopyalamak/yapıştırmak için Space + y / p yazın.
+
+=================================================================
+=                     4.3 DOSYA İÇİNDE ARAMA                    =
+=================================================================
+
+ Dosyada ileriye doğru aramak için / yazın, aramayı onaylamak için Enter'a basın.
+ Bir sonraki arama eşleşmesine gitmek için n yazın.
+ Önceki arama eşleşmesine gitmek için N yazın.
+
+ 1. / yazın ve 'elma' gibi yaygın bir kelime girin.
+ 2. Aramayı onaylamak için Enter'a basın.
+ 3. Eşleşmeler arasında gezinmek için n ve N kullanın.
+
+ Arama düzenli ifadeler (regex) kullanır, bu da daha karmaşık ifadeleri
+ hedeflemenize olanak tanır.
+
+ Not: Geriye doğru aramak için ? (Shift-/) yazın.
+ Not: Vim'den farklı olarak ? arama yönünü değiştirmez.
+       N her zaman geriye, n her zaman ileriye gider.
+
+
+
+=================================================================
+=                        BÖLÜM 4 ÖZETİ                          =
+=================================================================
+
+ * Geri almak için u yazın. Yinelemek için U yazın.
+
+ * Metni kopyalamak için y, yapıştırmak için p yazın.
+   * Sistem panosunda kopyalamak / yapıştırmak için Space + y ve Space + p kullanın.
+
+ * Dosyada ileri aramak için /, geriye aramak için ? yazın.
+   * Arama eşleşmeleri arasında gezinmek için n ve N kullanın.
+
+
+
+
+
+
+
+
+
+
+=================================================================
+=                     5.1 ÇOKLU İMLEÇLER                        =
+=================================================================
+
+ İmleci bir sonraki uygun satıra çoğaltmak için C yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş ilk satıra getirin. İmleci '-->'
+    simgesinden sonra bir yere koyun.
+ 2. İmleci sonraki uygun satıra çoğaltmak için C yazın. Ortadaki satırı
+    nasıl atladığına dikkat edin. Bastığınız tuşlar artık her iki imleci
+    de etkileyecektir.
+ 3. Satırları düzeltmek için Ekleme modunu kullanın. İki imleç her iki
+    satırı da aynı anda düzeltecektir.
+ 4. İlk imleci kaldırmak için , yazın.
+
+ --> İki atr aynı ansa düzelt.
+ -->
+ --> İki atr aynı ansa düzelt.
+     İki satırı aynı anda düzeltin.
+
+ Not: İmlecin üstünde aynısını yapmak için Alt-C tuşuna basın.
+
+=================================================================
+=                    5.2 SEÇİM KOMUTU                           =
+=================================================================
+
+ Seçim içindeki eşleşmeleri seçmek için s yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. Satırı seçmek için x yazın.
+ 3. s yazın. Bir komut istemi görünecektir.
+ 4. 'elma' yazıp Enter'a basın. Satırdaki her iki 'elma' kelimesi de seçilecektir.
+ 5. Şimdi c yazıp 'elma' kelimesini 'portakal' gibi başka bir şeyle değiştirebilirsiniz.
+ 6. Ekleme modundan çıkmak için Escape'e basın.
+ 7. İkinci imleci kaldırmak için , yazın.
+
+ --> En sevdiğim meyve elma olduğu için elma yemeyi severim.
+     En sevdiğim meyve portakal olduğu için portakal yemeyi severim.
+
+
+
+
+=================================================================
+=                    5.3 REGEX İLE SEÇME                        =
+=================================================================
+
+ Arama gibi, select komutu da yalnızca tam eşleşmeleri değil, düzenli
+ ifadeleri de seçer.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. x ile satırı seçin ve ardından s yazın.
+ 3. 1'den fazla ardışık boşluğu seçmek için '  +' yazın, ardından Enter'a basın.
+ 4. c yazın ve eşleşmeleri tek boşlukla değiştirin.
+
+ --> Bu  cümlede   bazı      fazladan boşluklar var.
+     Bu cümlede bazı fazladan boşluklar var.
+
+ Not: Bul ve değiştir yapmak istiyorsanız, bunu yapmanın yolu select komutudur.
+       Değiştirmek istediğiniz metni seçin — tüm dosyayı seçmek için % yazın —
+       ve ardından yukarıda açıklanan adımları uygulayın.
+
+
+=================================================================
+=                      5.4 SEÇİMLERİ HİZALAMA                   =
+=================================================================
+
+ Seçimlerin içeriklerini hizalamak için & yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş ilk satıra getirin. İmleci oktan
+    hemen sonraki boşluğa koyun.
+ 2. Dört kez C veya 4C yazın.
+ 3. Sayıları ve parantezleri seçmek için W yazın.
+ 4. Kelimeleri hizalamak için & yazın.
+
+ --> 97) lorem
+ --> 98) ipsum
+ --> 99) dolor
+ --> 100) sit
+ --> 101) amet
+
+ Not: & yalnızca seçimlerin "kafa" kısmının (hareket eden uç) hizalanmasını önemser.
+       Diğer uca "çapa" (anchor) denir.
+
+=================================================================
+=                 5.5 SEÇİMİ SATIRLARA BÖLME                    =
+=================================================================
+
+ Seçimleri yeni satırlarda bölmek için Alt-s tuşuna basın.
+
+ 1. İmleci aşağıdaki tablonun ilk satırına getirin.
+ 2. 6x ile tüm tabloyu seçin.
+ 3. Her satırda seçimlere bölmek için Alt-s tuşuna basın.
+ 4. Tabloyu & ile hizalayın.
+
+    | MEYVE   | MİKTAR |
+    |---------|--------|
+  | Elma    | 8      |
+    | Muz     | 6      |
+   | Portakal| 3      |
+      | Donut   | 4      |=====
+
+
+
+
+=================================================================
+=                        BÖLÜM 5 ÖZETİ                          =
+=================================================================
+
+ * İmleci bir sonraki uygun satıra çoğaltmak için C, önceki uygun
+   satır için Alt-C yazın.
+
+ * Mevcut seçim içindeki regex kalıbının tüm örneklerini seçmek
+   için s yazın.
+
+ * Seçimleri hizalamak için & yazın.
+
+ * Seçimi satırlara bölmek için Alt-s tuşuna basın.
+
+
+
+
+
+
+
+
+
+=================================================================
+=                 6.1 BİR KARAKTERE KADAR SEÇME                 =
+=================================================================
+
+ Bir karaktere kadar ve karakter dahil (find) seçmek için f<karakter> yazın.
+ Karakter dahil olmadan (till) aynısını yapmak için t<karakter> yazın.
+ Aynısını geriye doğru yapmak için büyük harf F / T yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin. İmleci ilk tire işaretine koyun.
+ 2. Köşeli paranteze kadar seçmek için f[ yazın.
+ 3. Seçiminizi silmek için d yazın.
+ 4. Satırın sonuna gidin ve F] ile tekrarlayın.
+ 5. '-->' ile işaretlenmiş ikinci satıra, oktan hemen sonraya gelin.
+ 6. Cümlenin etrafındaki tireleri silmek için t ve T kullanın.
+
+ --> -----[Bu cümleyi parantezlerinden kurtarın!]-----
+ --> ------Bu cümleyi tirelerinden kurtarın!------
+
+ Not: Vim'den farklı olarak Helix bu komutları mevcut satırla sınırlamaz.
+       Dosyadaki karakteri arar.
+
+=================================================================
+=                    6.2 DEĞİŞTİRME KOMUTU                      =
+=================================================================
+
+ Seçilen tüm karakterleri <karakter> ile değiştirmek için r<karakter> yazın.
+
+ 1. Tablonun ikinci satırına gidin, imleci ilk = üzerine koyun.
+ 2. = ayırıcısını seçmek için t| (Shift-\) yazın.
+ 3. Ayırıcıyı tirelerle değiştirmek için r- yazın.
+
+
+  | Ay   | Gün  |
+  |======|------|
+  | Oca  | 31   |
+  | Şub  | 28   |
+  | Mar  | 31   |
+  | ...  | ...  |
+
+
+
+
+=================================================================
+=                         6.3 TEKRARLAMA                        =
+=================================================================
+
+ Son ekleme komutunu tekrarlamak için . yazın.
+ Son f / t seçimini tekrarlamak için Alt-. tuşuna basın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. Bir değişiklik veya ekleme yapın ve bunu . ile tekrarlayın.
+ 3. Örneğin birden fazla cümleyi seçmek için f ve t ile Alt-. kullanmayı deneyin.
+
+ --> Bu, şeyleri tekrarlamanız için bir metindir. Kelimeleri değiştirmek
+     gibi eklemeleri tekrarlayabilir veya f / t gibi seçimleri tekrarlayabilirsiniz.
+
+
+
+
+
+
+
+=================================================================
+=                        BÖLÜM 6 ÖZETİ                          =
+=================================================================
+
+ * Seçimi bir karaktere kadar ve dahil uzatmak için f / F yazın.
+   * Seçimi bir karaktere kadar uzatmak için t / T yazın.
+
+ * Seçili karakterleri değiştirmek için r yazın.
+
+ * Son eklemeyi tekrarlamak için . yazın.
+   * Son f / t seçimini tekrarlamak için Alt-. tuşuna basın.
+
+
+
+
+
+
+
+
+
+
+
+=================================================================
+=                  7.1 KOPYALANAN METİNLE DEĞİŞTİRME            =
+=================================================================
+
+ Seçimi daha önce kopyalanan metinle değiştirmek için R yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. "karpuz" kelimesini seçmek için w ve kopyalamak için y yazın.
+ 3. "portakal" kelimesini w ile seçin.
+ 4. "portakal" yerine "karpuz" koymak için R yazın.
+
+
+ --> Karpuz severim çünkü portakal ferahlatıcıdır.
+     Karpuz severim çünkü karpuz ferahlatıcıdır.========
+
+
+
+
+
+
+
+
+=================================================================
+=                       7.2 SATIRLARI BİRLEŞTİRME               =
+=================================================================
+
+ Seçimdeki satırları birleştirmek için J yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. Dört satırı da seçmek için dört kez x veya 4x yazın.
+ 3. Satırları birleştirmek için J yazın.
+
+ --> Bu cümle
+ diğer satırlara
+ taşmaktadır.
+
+     Bu cümle diğer satırlara taşmaktadır.============
+
+
+
+
+
+
+=================================================================
+=                      7.3 SATIRLARI GİRİNTİLEME                =
+=================================================================
+
+ Bir satırı girintilemek için >, girintiyi azaltmak için < yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. İkinci satıra inin ve girintilemek için > yazın.
+ 3. Üçüncü satıra gidin ve girintiyi azaltmak için < yazın.
+
+ --> Bu satırların
+    girintisi
+         çok kötü.
+
+     Bu satırların
+     girintisi
+     çok daha iyi.
+
+
+
+
+
+=================================================================
+=               7.4 ARTTIRMA VE AZALTMA                         =
+=================================================================
+
+ Seçili sayıyı arttırmak için Ctrl-a tuşuna basın.
+ Seçili sayıyı azaltmak için Ctrl-x tuşuna basın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş üçüncü satıra getirin.
+ 2. 2 olarak işaretlenmiş ikinci maddeyi arttırmak için Ctrl-a tuşuna basın.
+ 3. 3 olarak işaretlenmiş madde için tekrarlayın.
+ 4. Son maddeye gidin ve 6'yı azaltmak için Ctrl-x tuşuna basın.
+
+ --> 1) İlk madde.
+ --> 2) Eklenen madde.
+ --> 2) Sonraki madde.
+ --> 3) Başka bir madde.
+ --> 6) Son madde.=====
+
+
+
+
+
+=================================================================
+=                        BÖLÜM 7 ÖZETİ                          =
+=================================================================
+
+ * Seçimi kopyalanan metinle değiştirmek için R yazın.
+
+ * Seçimdeki satırları birleştirmek için J yazın.
+
+ * Satırları girintilemek / girintiyi azaltmak için > ve < yazın.
+
+ * Seçili sayıyı arttırmak için Ctrl-a tuşuna basın.
+   * Seçili sayıyı azaltmak için Ctrl-x tuşuna basın.
+
+
+
+
+
+
+
+
+
+
+=================================================================
+=                         8.1 YAZMAÇLAR (REGISTERS)             =
+=================================================================
+
+ Yazmaçlar (registers), kopyalanan metin gibi şeyleri depolamak için
+ bir karakterle tanımlanan kapsayıcılardır. Yazmaçlar ayrıca bir sonraki
+ bölümde öğreneceğiniz makroların yanı sıra en son arama terimini depolamak
+ için de kullanılır.
+
+ <karakter> yazmacını seçmek için "<karakter> yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. "karpuz" kelimesini seçmek için w yazın ve y ile kopyalayın.
+ 3. "muz" kelimesini seçmek için w yazın.
+ 4. "b yazmacına geçmek için "b yazın ve y ile kopyalayın.
+ 5. "mandalina" kelimesini seçin ve yerine "karpuz" koymak için R yazın.
+ 6. "ananas" kelimesini seçin, ardından "bananas" (muz) ile değiştirmek için "b R yazın.
+
+ --> Karpuz ve muz severim çünkü en sevdiğim meyveler mandalina ve ananas.
+
+
+=================================================================
+=                          8.2 MAKROLAR                         =
+=================================================================
+
+ Makrolar, tekrarlamak istediğiniz bir dizi eylemi kaydetmenin bir yoludur.
+ Makroları belirli bir yazmaca da kaydedebilirsiniz (varsayılan @).
+ Makro kaydetmeyi başlatmak için Q yazın - ekranınızın altında bir açılır
+ pencere görmelisiniz. Kaydı durdurmak için tekrar Q yazın.
+ Makroyu @ yazmacından (varsayılan) tekrarlamak için q yazın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş ilk satıra getirin. İmlecinizin ok
+    simgesinin '>' karakterinde olduğundan emin olun.
+ 2. Kaydı başlatmak için Q yazın.
+ 3. Satırı alttaki satır gibi görünecek şekilde düzenleyin.
+ 4. Ekleme modundan çıkın ve kaydı durdurmak için tekrar Q yazın.
+ 5. Alttaki satıra geçin ve imlecinizi tekrar '>' üzerine koyun.
+ 6. Makroyu tekrarlamak için q yazın.
+
+ --> ... cümlenin ilk ve son kelimesi yok ... .
+ --> ... cümlenin ilk ve son kelimesi yok ... .
+     Bu cümlenin ilk ve son kelimesi yok.
+
+=================================================================
+=                        BÖLÜM 8 ÖZETİ                          =
+=================================================================
+
+ * Farklı bir yazmaç seçmek için " yazın.
+
+ * Varsayılanı @ olan bir yazmaca makro kaydetmeyi başlatmak ve durdurmak
+   için Q yazın.
+
+ * @ veya seçilen yazmaçtan bir makroyu yeniden oynatmak için q yazın. -----------
+
+
+
+
+
+
+
+
+
+
+
+=================================================================
+=                  9.1 SEÇİMLER İÇİN ARAMA                      =
+=================================================================
+
+ / ile yapılan en son arama / yazmacında saklanır.
+ n ve N harflerinin her ikisi de / yazmacına başvurur, bu da bir arama
+ yazmak zorunda kalmadan o yazmacı ayarlayabileceğimiz anlamına gelir.
+
+ Seçimi / yazmacına kopyalamak ve arama terimini seçime ayarlamak için * yazın.
+ Bu, seçimleri devretme bölümünde öğreneceğiniz birincil seçimi kopyalar.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. e ile "at" kelimesini seçin ve * yazın.
+ 3. "at" kelimesinin örnekleri arasında atlamak için n ve N kullanın.
+
+ --> At alana at saltanat,
+ --> At binenin kılıç kuşananın.
+
+ Not: * işlemi "/y için bir kısayol gibidir, çünkü tek yaptığı seçimi /
+       yazmacına kopyalamaktır.
+
+=================================================================
+=           9.2 SONRAKİ ARAMA EŞLEŞMESİNE SEÇİM EKLEME           =
+=================================================================
+
+ n ve N kullanırken Seçim modunun (v) bir özelliği, seçimi bir sonraki
+ eşleşmeye taşımak yerine her eşleşmeye yeni bir seçim eklemesidir.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. İlk "kedi" kelimesini seçin ve aramaya ayarlamak için * yazın.
+ 3. Seçim moduna girmek için v yazın.
+ 4. Diğer "kedi" kelimesini seçmek için n yazın.
+ 5. "kedi" kelimelerini "köpek" yapmak için c veya r kullanın.
+
+ --> Herkes kedi olmak ister,
+ --> çünkü kedi harika bir kedi
+ --> nereye gideceğini bilir.
+
+
+
+
+
+=================================================================
+=                     9.3 ATLAMA LİSTESİNİ KULLANMA             =
+=================================================================
+
+ Helix, kod içinde bir fonksiyonun tanımına atlamak veya aramak gibi büyük
+ hareketler olan "atlamaları" takip edebilir. Bunları atlama listesi (jumplist)
+ adı verilen yerde saklar.
+
+ Mevcut konumunuzu atlama listesine manuel olarak kaydetmek için Ctrl-s tuşuna basın.
+
+ Atlama listesinde sırasıyla ileri ve geri gitmek için Ctrl-i ("in") ve Ctrl-o ("out")
+ tuşlarına basın.
+
+ 1. Bir yerde Ctrl-s tuşuna basın.
+ 2. Dosyada uzak bir yere gidin.
+ 3. Kaydettiğiniz yere geri dönmek için Ctrl-o tuşuna basın (yalnızca bir kez!).=====
+
+
+
+
+
+=================================================================
+=             9.4 İKİ KARAKTERLİ ETİKETLERLE ATLAMA             =
+=================================================================
+
+ 2 karakterli etiketleri etkinleştirmek için gw yazın. Her kelimenin başlangıcı
+ 2 vurgulanmış karakterle değiştirilecektir. Karşılık gelen etikete atlamak için
+ vurgulanan 2 karakterden oluşan herhangi bir sırayı yazın veya etiketleri
+ bırakmak için ESC kullanın.
+
+ 2 karakterli etiketler, görüntülenebilir seçimdeki herhangi bir konuma hızlı bir
+ şekilde atlamanızı sağlar.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satırın başına getirin.
+ 2. 2 karakterli etiketleri etkinleştirmek için gw tuşuna basın ve ardından ilgili
+    kelimeye atlamak için buraya kelimesinin başındaki iki harfin yerine geçen iki
+    karaktere basın.
+
+ --> Bu sadece basit bir metin satırıdır.
+     Bunun gibi bir sürü satır olabilir
+     Ama gerçekten buraya atlamak istiyorsunuz!
+     Bu, 2 karakterli etiketlerle çok hızlıdır.
+
+=================================================================
+=                        BÖLÜM 9 ÖZETİ                          =
+=================================================================
+
+ * Arama yazmacını birincil seçime ayarlamak için * yazın.
+
+ * Her arama eşleşmesine seçim eklemek için Seçim modunda n / N yazın.
+
+ * Atlama listesine konum kaydetmek için Ctrl-s tuşuna basın.
+   * Atlama listesinde ileri ve geri gitmek için Ctrl-i ve Ctrl-o tuşlarına basın.
+
+ * 2 karakterli etiketleri etkinleştirmek için gw yazın ve karşılık gelen etikete
+   atlamak için herhangi 2 karaktere veya etiketleri bırakmak için ESC'ye basın.
+
+
+
+
+
+
+
+=================================================================
+=             10.1 SEÇİMLERİ DEVRETME VE KALDIRMA               =
+=================================================================
+
+ Birincil seçimi seçimler arasında sırasıyla ileri ve geri devretmek
+ için ) ve ( yazın.
+
+ Birincil seçimi kaldırmak için Alt-, tuşuna basın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. xx veya 2x ile her iki satırı da seçin.
+ 3. Seçmek için s yazın, "odun" yazın ve enter'a basın.
+ 4. Birincil seçimi devretmek için ( ve ) kullanın ve Alt-, ile ikinci "odun"
+    seçimini kaldırın.
+ 5. Kalan "odun" kelimelerini "orman" yapmak için c "orman" yazın.
+
+ --> Ne kadar odun kırabilir bir oduncu
+ --> eğer bir oduncu odun kırabilseydi?
+
+
+
+
+=================================================================
+=             10.2 SEÇİM İÇERİĞİNİ DEVRETME                     =
+=================================================================
+
+ Seçimlerin içeriğini sırasıyla ileri ve geri devretmek için Alt-) ve Alt-(
+ tuşlarına basın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. xx veya 2x ile her iki satırı da seçin.
+ 3. Seçmek için s yazın, "su|bilmek|yüzmek" yazın ve enter'a basın.
+ 4. Seçimlerin içeriğini devretmek için Alt-( ve Alt-) kullanın.
+
+ --> Suda yüzmek,
+ --> bilmeye cüret etmek.========
+
+
+
+
+
+
+
+
+=================================================================
+=                     10.3 HARF BÜYÜKLÜĞÜNÜ DEĞİŞTİRME          =
+=================================================================
+
+ Seçilen tüm harflerin büyük/küçük durumunu değiştirmek için ~ yazın.
+ Seçilen tüm harfleri küçük harf yapmak için ` yazın.
+ Seçilen tüm harfleri büyük harf yapmak için Alt-` tuşuna basın.
+
+ 1. İmleci aşağıda '-->' ile işaretlenmiş ilk satıra getirin.
+ 2. Yanlış büyük veya küçük yazılmış her harfi seçin ve üzerlerinde ~ yazın.
+ 3. '-->' ile işaretlenmiş ikinci satıra gidin.
+ 4. Satırı seçmek için x yazın.
+ 5. Satırı küçük harfe çevirmek için ` yazın.
+ 6. '-->' ile işaretlenmiş üçüncü satıra gidin.
+ 7. Satırı seçmek için x yazın.
+ 8. Satırı büyük harfe çevirmek için Alt-` tuşuna basın.
+
+ --> bU cÜmLedE yAnLIş bÜyÜtÜlMüŞ hArfLEr vAr.
+ --> BU CÜMLENİN HEPSİ KÜÇÜK HARF OLMALIDIR.
+ --> bu cümlenin hepsi BÜYÜK HARF OLMALIDIR!
+
+=================================================================
+=                   10.4 SEÇİMLERİ BÖLME                        =
+=================================================================
+
+ Her bir seçimi bir regex kalıbında bölmek için S yazın.
+
+ 1. İmleci --- altındaki satıra getirin.
+ 2. Satırları seçmek için xx / 2x yazın.
+ 3. S yazın, ardından \. |! Enter girin (. ve ! sonrasındaki boşluklara dikkat edin).
+    Bu işlem seçimi her nokta veya ünlem işaretinde cümlelere böler.
+ 4. Seçimleri tersine çevirmek için Alt-; tuşuna basın.
+ 5. Seçimleri tek bir karaktere — her cümlenin ilk harfine — daraltmak için ; yazın.
+ 6. Seçilen tüm harfleri büyük harfe dönüştürmek için Alt-` tuşuna basın.
+
+---
+bunlar cümlelerdir. bazı cümleler büyük harfle başlamaz! bu iyi bir dilbilgisi değildir. bunu düzeltebilirsiniz.
+
+
+
+=================================================================
+=                        BÖLÜM 10 ÖZETİ                         =
+=================================================================
+
+ * Birincil seçimi seçimler arasında geri ve ileri devretmek için ) ve ( kullanın.
+   * Birincil seçimi kaldırmak için Alt-, tuşuna basın.
+   * Seçimlerin içeriğini devretmek için Alt-) ve Alt-( tuşlarına basın.
+
+ * Seçili harflerin durumunu değiştirmek (büyük/küçük) için ~ yazın.
+   * Seçili harflerin durumunu sırasıyla küçük ve büyük yapmak için ` ve Alt-` kullanın.
+
+ * Seçimleri regex ile bölmek için S yazın.-----------------
+
+
+
+
+
+
+
+
+
+=================================================================
+=                     11.1 BİR SATIRI YORUMA ALMA               =
+=================================================================
+
+ İmlecinizin altındaki satırı yoruma almak için Ctrl-c tuşuna basın.
+ Satırın yorumunu kaldırmak için tekrar Ctrl-c tuşuna basın.
+
+ 1. İmlecinizi aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. Şimdi '-->' ile işaretlenmiş satırı yoruma alın.
+ 3. Şimdi satırın yorumunu kaldırmayı deneyin.
+
+ --> Beni yoruma al lütfen----------
+
+
+
+
+
+
+
+
+
+=================================================================
+=                 11.2 BİRDEN FAZLA SATIRI YORUMA ALMA          =
+=================================================================
+
+ Seçimleri ve çoklu imleç işlevini kullanarak, seçim veya imleçlerin
+ altında oldukları sürece birden fazla satırı yoruma alabilirsiniz.
+
+ 1. İmlecinizi aşağıda '-->' ile işaretlenmiş satıra getirin.
+ 2. Şimdi '-->' ile işaretlenmiş diğer satırları seçmeyi veya daha fazla imleç eklemeyi deneyin.
+ 3. Bu satırları yoruma alın.
+
+ --> Kaç tanesini yoruma alacaksınız?
+ --> Bu yorum için yeterli mi?
+ --> Ne yapıyorsun?!
+ --> Beni yoruma almayı bırak!
+ --> AAAAaargh!!!
+
+ Not: Seçimlerin veya çoklu imleçlerin altında zaten yorumlanmış satırlar varsa,
+ bunlar yorumdan çıkarılmaz, tekrar yorumlanır.
+
+=================================================================
+=                       BÖLÜM 11 ÖZETİ                          =
+=================================================================
+
+ * İmlecinizin altındaki bir satırı yoruma almak için Ctrl-c kullanın.
+   Yorumu kaldırmak için tekrar Ctrl-c tuşuna basın.
+ * Birden fazla satırı yoruma almak için Ctrl-c yazmadan önce seçimleri
+   ve çoklu imleçleri kullanın.
+   * Yorumlanmış satırlar tekrar yorumlanabilir ancak otomatik yorumdan çıkarılamaz.
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================================================
+=                   12.1 EŞLEŞME MODU ATLAMASINI KULLANMA       =
+=================================================================
+
+ Normal moddan eşleşme moduna (match mode) geçmek için m yazın. Bu özellik
+ özellikle parantez çiftlerini ve içeriklerini işlemek için kullanışlıdır.
+
+ Yardım açılır penceresinde belirtildiği gibi, eşleşme modunda gerçekleştirilebilecek
+ birkaç eylem vardır. Eşleşen bir parantez çiftine atlamak için mm tuşuna basmanız yeterlidir.
+ Örneğin aşağıdaki satırlarda (--> ile başlayan), imleci normal modda ( üzerine getirin ve
+ eşleşen ) işaretine atlamak için mm tuşuna basın. Aynısını alttaki satırda da yapabilirsiniz:
+ örneğin ] üzerine gelin ve [ işaretine atlamak için mm tuşuna basın.
+
+ --> (eşleşen parantezler arasında atlayabilirsiniz)
+ --> veya eşleşen [ köşeli parantezler ] arasında
+ --> şimdi { yöntemi biliyorsunuz: bu küme parantezleri ile de çalışır }====
+
+
+
+
+=================================================================
+=              12.2 EŞLEŞME MODU İÇİNİ SEÇMEYİ KULLANMA         =
+=================================================================
+
+ Eşleşme modu ayrıca bir parantez çifti veya diğer sınırlayıcılar arasındaki
+ "iç" içeriği seçmenize olanak tanır. Aşağıdaki satırlarda:
+
+ - --> satırına gidin, imlecinizi normal modda parantez arasındaki herhangi bir yere
+ (örneğin 'x' üzerine) koyun ve parantez içindeki tüm içeriği (parantezler hariç)
+ seçmek için mi( veya mi) tuşlarına basın. Her zamanki gibi, seçimle istediğiniz her şeyi
+ yapabilirsiniz (örneğin değiştirmek için c tuşuna basın).
+
+ --> dışarıda ve (parantez x içinde) - ve tekrar dışarıda
+
+ Aynısını [], {} veya bunların iç içe geçmiş kombinasyonlarıyla yapabileceğinizi aşağıda
+ test edin (bu, hemen etraflarındaki eşleşen çift üzerinde işlem yapar). Bu aynı zamanda ""
+ ve benzeri işaretlerle de çalışır.
+
+ --> [ köşeli parantezlerle ] test edin!
+ --> ( iç içe geçmiş [ parantez ( çiftleri) ve "tırnaklar" ]) ile deneyin
+
+=================================================================
+=               12.3 EŞLEŞME MODU ETRAFINI SEÇMEYİ KULLANMA     =
+=================================================================
+
+ ma seçeneğini kullanarak "etrafındaki" içeriği, yani hem iç içeriği hem de sınırlayıcıların
+ kendilerini seçebilirsiniz. Örneğin aşağıdaki satıra gidin, imlecinizi normal modda ()
+ arasındaki herhangi bir konuma getirin ve etraftaki () dahil olmak üzere () içeriğini ma(
+ veya ma) yazarak seçin. Her zamanki gibi seçimle istediğiniz her şeyi yapabilirsiniz,
+ örneğin ma(d ile hepsini silebilirsiniz.
+
+ --> sınırlayıcıları seçime dahil etmek için ( etrafını x seçersiniz )
+
+ Bu doğal olarak diğer sınırlayıcılarla da çalışır:
+
+ --> ['köşeli' parantezlerle] de deneyin!-----+
+
+
+
+
+
+=================================================================
+=                12.4 EŞLEŞME MODU KUŞATMAYI KULLANMA           =
+=================================================================
+
+ Eşleşme modu, mevcut seçimin etrafına kuşatma (surround) eklemek için de kullanılabilir.
+ Örneğin aşağıdaki satıra gidin, ardından:
+   * i) "bunun hepsini seçin" satır segmentini seçin (örneğin, normal modda imleci seçin
+ kelimesinin başına getirin, ardından v ile seçim moduna girin, ardından 4e ile sonraki 4 kelimeyi seçin),
+   * ii) seçimi bir parantez çifti ile kuşatmak için ms( veya ms) tuşuna basın.
+
+ --> öyleyse, bunun hepsini seçin, ve bunu () ile kuşatın
+
+ Aynısını diğer sınırlayıcılarla da yapabilirsiniz: örneğin, alttaki KELİME etrafına ms'
+ uygulayarak onu bir '' çifti ile kuşatın. Ayrıca "" veya {} veya [] kuşatma çifti eklemeyi de deneyebilirsiniz.
+
+ --> bu KELİME yi kuşatın !
+
+
+
+
+=================================================================
+=              12.5 EŞLEŞME MODU KUŞATMAYI SİLMEYİ KULLANMA     =
+=================================================================
+
+ Etraftaki sınırlayıcı çiftini md komutuyla silebilirsiniz. Aşağıdaki satırda imleci
+ () çifti içinde herhangi bir yere, örneğin 'x' üzerine getirin, ardından oradan normal
+ modda etraftaki parantez çiftini silmek için md( veya md) tuşuna basın.
+
+ --> etraftaki (parantez x çiftini) içeriden silin!
+
+ Doğal olarak diğer kuşatma türlerini de silebilirsiniz:
+
+ --> (iç içe [sınırlayıcıları]) silin: "bu" en yakın eşleşen kuşatma çiftini silecektir.
+ --> "tırnak işaretlerinin "katmanlarını"" da silin: bu, en yakın önceki ve sonraki tırnak işaretlerini silecektir
+
+ Var olmayan kuşatma sınırlayıcılarını silmeye çalışmak alt çubukta bir hata yazdırır ve hiçbir şey yapmaz.
+
+=================================================================
+=             12.6 EŞLEŞME MODU KUŞATMAYI DEĞİŞTİRMEYİ KULLANMA =
+=================================================================
+
+ Kuşatan sınırlayıcı çiftlerini mr komutu ile değiştirebilirsiniz. Aşağıdaki satırda
+ imleci () çifti içinde herhangi bir yere, örneğin 'x' üzerine getirin, ardından normal modda
+ () çiftini bir [] çifti ile değiştirmek için mr([ tuşuna basın.
+
+ --> (içerideki x çiftini), başka bir şeyle değiştirin
+
+ Bu komut en yakın kapsayan çift üzerinde işlem yapacaktır, bu nedenle aşağıdakilerde farklı
+ kuşatmaları değiştirmeyi deneyebilirsiniz:
+
+ --> bazı (iç içe kuşatmalar [değiştirilebilir])
+ --> bu "diğer 'kuşatmalarla' da çalışır"
+
+ Var olmayan bir çifti değiştirmeyi deneyebilirsiniz: bu, alt çubukta bir hata uyarısı gösterir
+ ve hiçbir şey yapmaz.
+
+
+=================================================================
+=                       BÖLÜM 12 ÖZETİ                          =
+=================================================================
+
+ m tuşu ile eşleşme moduna girebilirsiniz; bu, mevcut eylemleri bir açılır pencerede
+ gösterir. Bu şunları yapmanızı sağlar:
+   * mm ile eşleşen sınırlayıcı çiftine atlayın (imlecinizin altında bir çifte ait bir
+     sınırlayıcı olmalıdır)
+   * mi( ve benzerleri ile imlecinizi çevreleyen bir sınırlayıcı çiftinin içini seçin
+     (yani içeriği seçin ancak sınırlayıcıları seçmeyin)
+   * ma( ve benzerleri ile imlecinizi çevreleyen bir sınırlayıcı çiftinin etrafını seçin
+     (yani içeriği ve sınırlayıcıları seçin)
+   * md( ve benzerleri ile etraftaki sınırlayıcıları silin
+   * ms( ile seçimin etrafına sınırlayıcılar ekleyin
+   * mr([ ile seçiminizi çevreleyen sınırlayıcı çiftini değiştirin (örneğin etraftaki
+     () işaretini [] ile değiştirmek için)
+
+
+
+
+=================================================================
+=                BÖLÜM 13.1 YENİ BÖLME (SPLIT) OLUŞTURMA         =
+=================================================================
+
+ Normal modda, kullanılabilir komutların bir listesini görüntüleyen Pencere
+ menüsünü açmak için Ctrl-w tuşuna basın.
+
+ Mevcut pencerenizin sağ yarısında dikey bir bölmede yeni bir boş arabellek (buffer)
+ açmak için Ctrl-w nv tuşlarını kullanın (yani aynı anda Ctrl ve w tuşlarına basın,
+ ardından n ve ardından v tuşuna basın). Mevcut pencereniz dikey olarak 2'ye bölünecektir.
+ Sağ yarıda yeni bir boş arabellek bölmesi görünecek ve imleciniz yeni dikey bölmeye atlayacaktır.
+
+ Yatay bir bölmede yeni bir boş arabellek oluşturmak için Ctrl-w ns tuşlarına basın.
+ Bu eylem mevcut pencerenizi yatay olarak ikiye böler, yeni bir arabellek oluşturur ve
+ imlecinizi yeni yatay bölmeye taşır.
+
+
+
+
+=================================================================
+=                BÖLÜM 13.2 BÖLMELER ARASINDA HAREKET ETME      =
+=================================================================
+
+ Mevcut bölmenizin üstündeki bölmeye geçmek için Ctrl-w k kullanın. Altındaki bölmeye
+ geçmek için Ctrl-w j kullanın. Soldaki bölmeye geçmek için Ctrl-w h ve sağdaki bölmeye
+ geçmek için Ctrl-w l kullanın. Bir sonraki bölmeye (açılış sırasına göre) gitmek için
+ Ctrl-w w tuşuna basın.
+
+ Artık yeni arabelleklerinizde ve bölmelerinizde istediğinizi yapabilirsiniz. Yeni arabellek
+ bölmenizi kullanmayı bitirdiğinizde, Ctrl-w q ile kapatabilirsiniz. Ctrl-w l ve ardından
+ Ctrl-w j ile sağ alt bölmeye geçin, ardından bu dikey bölmeyi kapatmak için Ctrl-w q tuşuna basın.
+
+ Mevcut bölme dışındaki tüm bölmeleri Ctrl-w o ile de kapatabilirsiniz. Ctrl-w nv ile
+ üçüncü bir dikey bölme açın, ardından iki kez Ctrl-w h ile en soldaki bölmeye geçin,
+ ardından soldaki bölmenin içindeyken bu bölme dışındakilerin hepsini kapatmak için
+ Ctrl-w o tuşuna basın.
+
+
+=================================================================
+=               BÖLÜM 13.3 MEVCUT ARABELLEĞİ BÖLME              =
+=================================================================
+
+ Mevcut arabelleğin görünümünü yatay olarak bölmek için Ctrl-w s ve arabellek her iki
+ bölmede de açık olacak şekilde dikey olarak bölmek için Ctrl-w v tuşlarını kullanın.
+
+ Tek pencere görünümüne dönmek için Ctrl-w o ile fazladan bölmeleri kapatın.
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================================================
+=               BÖLÜM 13.4 BÖLMEK İÇİN KOMUTLARI KULLANMA       =
+=================================================================
+
+ :vsplit (veya kısaca :vs) ve :hsplit (veya :hs) komutları belirli bir arabelleği
+ dikey veya yatay olarak bölmek için de kullanılabilir. Örneğin şu komutu girin:
+
+ :vs biseyler
+
+ sağ tarafta "biseyler" adında yeni bir dikey bölme açmak için. Burada "biseyler"
+ mevcut bir dosya değildir, bu nedenle bu ada sahip yeni bir arabellek açılacaktır;
+ ancak herhangi bir dosyayı yeni bir arabellekte açmak için "biseyler" yerine o dosya
+ adını yazabilirsiniz. Benzer şekilde şu komutu girebilirsiniz:
+
+ :hs biraz_daha
+
+ alt yarıda "biraz_daha" adında yeni bir arabellek açmak için. "biraz_daha", yeni bir
+ boş arabellek yerine belirli bir dosyayı veya yolu açmak için herhangi bir dosya veya
+ yol olabilir.
+
+
+=================================================================
+=                  BÖLÜM 13.5 BÖLMELERİ YER DEĞİŞTİRME           =
+=================================================================
+
+ :vs merhaba1 ile solda bir bölme açın ve ardından :hs merhaba2 ile altta bir bölme açın.
+
+ merhaba2 içindeyken, üstteki bölme ile yer değiştirmek için Ctrl-w K tuşuna basın.
+ Şimdi merhaba2 üstte, merhaba1 ise altta.
+
+ Hala merhaba2 içindeyken, soldaki bölme ile yer değiştirmek için Ctrl-w H tuşuna basın:
+ şimdi merhaba2 solda ve tutor sağ üstte. Ctrl-w işleminden sonra soldaki / alttaki /
+ üstteki / sağdaki arabellek ile yer değiştirmek için HJKL tuşlarını kullanabilirsiniz.
+
+ Tutor bölmesine geri dönün ve yalnızca bu bölmeyi tutmak için Ctrl-w o tuşuna basın.─────
+
+
+
+
+
+=================================================================
+=                BÖLÜM 13.6 BÖLMELERİN TERSİNİ ALMA             =
+=================================================================
+
+ :vs merhaba1 ile solda bir bölme açın ve ardından :hs merhaba2 ile altta bir bölme açın.
+
+ Tutor bölmesine geçin, ardından bu pencereden açılan dikey bölmenin tersini almak
+ (transpose) için Ctrl-w t tuşuna basın: şimdi merhaba1 ve merhaba2 tutor'un sağında olmak
+ yerine altındadır. Eski haline getirmek için tekrar Ctrl-w t tuşuna basın.
+
+ merhaba1 bölmesine geçin, ardından bu pencereden açılan yatay bölmenin tersini almak
+ için Ctrl-w t tuşuna basın: şimdi merhaba2 merhaba1'in altında olmak yerine sağındadır.
+ Eski haline getirmek için Ctrl-w t tuşuna basın.
+
+ Tutor bölmesine geri dönün ve tutor penceresi dışındaki tüm bölmeleri kapatmak için
+ Ctrl-w o tuşuna basın.
+
+
+
+=================================================================
+=             BÖLÜM 13.7 DOSYA SEÇİCİDEN BÖLME AÇMA             =
+=================================================================
+
+ Bölmeler doğrudan dosya seçiciden (file picker) de açılabilir. Dosya seçiciyi açmak
+ için space f tuşuna basın. Buradan, bulanık eşleşme (fuzzy matching) ile dosya araması
+ yapmak için metin yazabilir ve seçilen dosyayı hareket ettirmek için yukarı ve aşağı
+ okları kullanabilirsiniz (> simgesi ile gösterilir). Dosya seçiciden çıkmak istiyorsanız
+ Escape tuşuna basın.
+
+ Dosya seçicide istediğiniz herhangi bir dosyayı seçin. Enter tuşuna basarak mevcut görünümde
+ açabilirsiniz (şu anda bunu yapmayın). Ancak bunu yeni bir bölmede de açabilirsiniz.
+ Seçilen dosyayı yeni bir dikey bölmede açmak için Ctrl-v tuşuna basın. Tekrar space f
+ tuşuna basın, istediğiniz dosyayı seçin ve yatay bir bölmede açmak için Ctrl-s tuşuna basın.
+
+ Tutor bölmesine geri dönün ve bu bölme dışındaki tüm bölmeleri kapatmak için Ctrl-w o tuşuna basın.
+
+
+
+=================================================================
+=                        BÖLÜM 13 ÖZETİ                         =
+=================================================================
+
+ Bölmeler, aynı arabelleği birkaç kez veya birkaç arabelleği görüntülemek için kullanılabilir.
+ Ana pencerelere ve bölme komutlarına erişmek için Ctrl-w tuşuna basın. Ctrl-w hjkl ile bölmeler
+ arasında gezinebilir, Ctrl-w q ile bir bölmeyi kapatabilir ve Ctrl-w o ile mevcut bölme
+ dışındakilerin hepsini kapatabilirsiniz.
+
+ Bölmeler ayrıca :vs DOSYA_ADI ve :hs DOSYA_ADI komutları kullanılarak da açılabilir.
+
+ Bölmeler doğrudan dosya seçicilerden de kullanılabilir; seçilen dosyayı yeni bir dikey bölmede
+ açmak için Ctrl-v, yatay bir bölmede açmak için Ctrl-s kullanabilirsiniz.───────======
+
+
+
+
+
+
+=================================================================
+ Bu eğitim materyali halen geliştirilme aşamasındadır.
+ Daha fazla bölüm eklenmesi planlanmaktadır.

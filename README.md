@@ -32,9 +32,9 @@ chmod +x install.sh
 The script performs the following actions:
 1. **Installs required packages:**
    ```bash
-   sudo pacman -S --needed hyprland hyprpaper hyprlock hypridle hyprsunset \
+   sudo pacman -S --needed hyprland swaybg hyprlock hypridle hyprsunset \
      alacritty waybar dunst zsh starship yazi fastfetch grim slurp cliphist \
-     pamixer brightnessctl cava helix
+     pamixer brightnessctl cava helix blueman satty eza bat zoxide fzf wf-recorder hyprpicker
    ```
 2. **Deploys configuration files:**
    - Copies `dotconfig/*` to `~/.config/`
@@ -47,14 +47,17 @@ The script performs the following actions:
 - **Status Bar:** [Waybar](https://github.com/Alexays/Waybar)
 - **Application Launcher:** [Hyprlauncher](https://github.com/hyprwm/hyprlauncher)
 - **Notification Daemon:** [Dunst](https://github.com/dunst-project/dunst)
-- **Wallpaper & Screen Lock:** [Hyprpaper](https://github.com/hyprwm/hyprpaper), [Hyprlock](https://github.com/hyprwm/hyprlock), [Hypridle](https://github.com/hyprwm/hypridle)
+- **Wallpaper & Screen Lock:** [Swaybg](https://github.com/swaywm/swaybg), [Hyprlock](https://github.com/hyprwm/hyprlock), [Hypridle](https://github.com/hyprwm/hypridle)
 - **Shell & Prompt:** [Zsh](https://github.com/zsh-users/zsh), [Starship](https://github.com/starship/starship)
 - **File Manager:** [Yazi](https://github.com/sxyazi/yazi)
 - **System Info Display:** [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
-- **Screenshot & Clipboard:** [Grim](https://github.com/emersion/grim), [Slurp](https://github.com/emersion/slurp), [Cliphist](https://github.com/sentriz/cliphist)
+- **Screenshot & Annotation:** [Grim](https://github.com/emersion/grim), [Slurp](https://github.com/emersion/slurp), [Satty](https://github.com/gabm/satty)
+- **Screen Recorder:** [wf-recorder](https://github.com/ammen99/wf-recorder)
+- **Clipboard:** [Cliphist](https://github.com/sentriz/cliphist)
 - **Text Editor:** [Helix](https://github.com/helix-editor/helix)
 - **Audio & Brightness Control:** [Pamixer](https://github.com/cdemoulins/pamixer), [Brightnessctl](https://github.com/Hummer666/brightnessctl)
 - **Audio Visualizer:** [Cava](https://github.com/karlstav/cava)
+- **CLI Enhancements:** [Eza](https://github.com/eza-community/eza), [Bat](https://github.com/sharkdp/bat), [Zoxide](https://github.com/ajeetdsouza/zoxide), [FZF](https://github.com/junegunn/fzf)
 - **Theme:** GTK3 / GTK4 Dark Theme
 
 ## Keybindings
@@ -67,6 +70,8 @@ The script performs the following actions:
 - **SUPER + SHIFT + W:** Wallpaper Selector
 - **SUPER + F:** Toggle Fullscreen Mode
 - **SUPER + V:** Clipboard History (Cliphist)
-- **SUPER + P:** Screenshot Selection (Grim + Slurp)
+- **SUPER + P:** Screenshot Selection (Grim + Slurp + Satty)
 - **Print:** Screenshot Entire Screen
+- **SUPER + R:** Toggle Screen Recorder (wf-recorder)
+- **SUPER + SHIFT + N:** Toggle Night Mode (Hyprsunset)
 - **SUPER + Delete:** Exit Hyprland

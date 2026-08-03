@@ -12,4 +12,3 @@ hl.env("EDITOR", "helix")
 hl.env("VISUAL", "helix")
 hl.env("BROWSER", "zen-browser")
 hl.env("TERMINAL", "alacritty")
-

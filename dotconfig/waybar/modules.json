@@ -2,19 +2,11 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "persistent-workspaces": { "*": 5 },
-        "cursor": true,
-        "actions": {
-            "on-scroll-up": "number_up",
-            "on-scroll-down": "number_down"
-        },
         "format-icons": {
             "active": "󰮯",
             "persistent": "",
             "empty": ""
         }
-    },
-    "hyprland/window": {
-        "max-length": 35
     },
     "network": {
         "format-wifi": "󰤨",
@@ -29,10 +21,6 @@
         "format-connected": "󰂱",
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "on-click": "gtk-launch blueman-manager"
-    },
-    "tray": {
-        "icon-size": 14,
-        "spacing": 8
     },
     "backlight": {
         "format": "{icon}",

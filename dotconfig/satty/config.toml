@@ -1,0 +1,7 @@
+[general]
+fullscreen = false
+corner-roundness = 12
+initial-tool = "brush"
+copy-command = "wl-copy"
+output-filename = "~/Pictures/screenshots/screenshot_%Y%m%d_%H%M%S.png"
+early-exit = ["copy", "save"]

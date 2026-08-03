@@ -6,7 +6,7 @@
         "~/.config/waybar/modules.json"
     ],
 
-    "modules-left": ["hyprland/workspaces", "hyprland/mode"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["network", "bluetooth", "backlight", "pulseaudio", "battery"]
 }

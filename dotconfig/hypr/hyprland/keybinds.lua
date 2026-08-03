@@ -23,20 +23,16 @@ hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("waypaper"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -p '>' | cliphist decode | wl-copy"))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("cliphist wipe && notify-send 'Clipboard' 'History Cleared' -u low"))
-hl.bind(
-	mainMod .. " + P",
-	hl.dsp.exec_cmd('grim -g "$(slurp)" - | tee ~/Pictures/screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | wl-copy')
-)
-hl.bind("Print", hl.dsp.exec_cmd("grim - | tee ~/Pictures/screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | wl-copy"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("/home/burakt/.config/hypr/scripts/screenshot.sh"))
+hl.bind("Print", hl.dsp.exec_cmd("/home/burakt/.config/hypr/scripts/screenshot.sh"))
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + SHIFT + up", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("hyprpicker"))
 hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("hyprsysteminfo"))
--- geçici waybar yenileme kısayolu
-hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("killall waybar && waybar &"))
-
 -- Night Mode (hyprsunset) toggle
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle-nightmode.sh"))
+-- Screen Recorder (wf-recorder) toggle
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/recorder.sh"))
 
 -- Move Focus
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
