@@ -41,6 +41,22 @@
             "type": "terminalfont",
             "key": " Font"
         },
+        {
+            "type": "editor",
+            "key": " Editor"
+        },
+        {
+            "type": "theme",
+            "key": " Theme"
+        },
+        {
+            "type": "icons",
+            "key": " Icons"
+        },
+        {
+            "type": "cursor",
+            "key": " Cursor"
+        },
         "break",
         {
             "type": "cpu",
