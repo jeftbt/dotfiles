@@ -32,10 +32,10 @@ chmod +x install.sh
 The script performs the following actions:
 1. **Installs required packages:**
    ```bash
-   sudo pacman -S --needed hyprland swaybg hyprlock hypridle hyprsunset hyprpolkitagent \
-     alacritty waybar dunst zsh starship yazi fastfetch grim slurp cliphist rofi wl-clipboard \
-     pamixer brightnessctl cava helix blueman satty eza bat zoxide fzf wf-recorder hyprpicker \
-     pipewire pipewire-pulse wireplumber udiskie playerctl power-profiles-daemon \
+   sudo pacman -S --needed hyprland swaybg hyprlock hypridle hyprsunset hyprpolkitagent hyprlauncher \
+     alacritty waybar dunst zsh starship yazi fastfetch grim slurp cliphist wl-clipboard \
+     pamixer brightnessctl cava helix blueman satty eza zoxide fzf wf-recorder \
+     pipewire pipewire-pulse wireplumber udiskie playerctl \
      ttf-jetbrains-mono-nerd zsh-autosuggestions zsh-syntax-highlighting
    ```
 2. **Deploys configuration files:**
@@ -59,7 +59,7 @@ The script performs the following actions:
 - **Text Editor:** [Helix](https://github.com/helix-editor/helix)
 - **Audio & Brightness Control:** [Pamixer](https://github.com/cdemoulins/pamixer), [Brightnessctl](https://github.com/Hummer666/brightnessctl)
 - **Audio Visualizer:** [Cava](https://github.com/karlstav/cava)
-- **CLI Enhancements:** [Eza](https://github.com/eza-community/eza), [Bat](https://github.com/sharkdp/bat), [Zoxide](https://github.com/ajeetdsouza/zoxide), [FZF](https://github.com/junegunn/fzf)
+- **CLI Enhancements:** [Eza](https://github.com/eza-community/eza), [Zoxide](https://github.com/ajeetdsouza/zoxide), [FZF](https://github.com/junegunn/fzf)
 - **Theme:** GTK3 / GTK4 Dark Theme
 
 ## Keybindings
