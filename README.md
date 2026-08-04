@@ -32,9 +32,11 @@ chmod +x install.sh
 The script performs the following actions:
 1. **Installs required packages:**
    ```bash
-   sudo pacman -S --needed hyprland swaybg hyprlock hypridle hyprsunset \
-     alacritty waybar dunst zsh starship yazi fastfetch grim slurp cliphist \
-     pamixer brightnessctl cava helix blueman satty eza bat zoxide fzf wf-recorder hyprpicker
+   sudo pacman -S --needed hyprland swaybg hyprlock hypridle hyprsunset hyprpolkitagent \
+     alacritty waybar dunst zsh starship yazi fastfetch grim slurp cliphist rofi wl-clipboard \
+     pamixer brightnessctl cava helix blueman satty eza bat zoxide fzf wf-recorder hyprpicker \
+     pipewire pipewire-pulse wireplumber udiskie playerctl power-profiles-daemon \
+     ttf-jetbrains-mono-nerd zsh-autosuggestions zsh-syntax-highlighting
    ```
 2. **Deploys configuration files:**
    - Copies `dotconfig/*` to `~/.config/`

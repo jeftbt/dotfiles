@@ -3,9 +3,11 @@
 set -e
 
 echo "==> Gerekli paketler yükleniyor..."
-sudo pacman -S --needed hyprland swaybg hyprlock hypridle hyprsunset \
-  alacritty waybar dunst zsh starship yazi fastfetch grim slurp cliphist \
-  pamixer brightnessctl cava helix blueman satty eza bat zoxide fzf wf-recorder hyprpicker
+sudo pacman -S --needed hyprland swaybg hyprlock hypridle hyprsunset hyprpolkitagent \
+  alacritty waybar dunst zsh starship yazi fastfetch grim slurp cliphist rofi wl-clipboard \
+  pamixer brightnessctl cava helix blueman satty eza bat zoxide fzf wf-recorder hyprpicker \
+  pipewire pipewire-pulse wireplumber udiskie playerctl power-profiles-daemon \
+  ttf-jetbrains-mono-nerd zsh-autosuggestions zsh-syntax-highlighting
 
 echo "==> Konfigürasyon dosyaları ~/.config dizinine kopyalanıyor..."
 mkdir -p ~/.config
