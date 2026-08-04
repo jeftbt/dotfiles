@@ -13,7 +13,7 @@ cp -r dotconfig/* ~/.config/
 
 if [ -d "home" ]; then
     echo "==> Ev dizini konfigürasyonları kopyalanıyor..."
-    cp -rn home/. ~/ 2>/dev/null || true
+    cp -r home/. ~/
 fi
 
 echo "==> Kurulum başarıyla tamamlandı!"
