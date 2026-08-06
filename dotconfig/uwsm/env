@@ -1,0 +1,17 @@
+# Hardware Acceleration & NVIDIA
+export NVD_BACKEND=direct
+export __GL_GSYNC_ALLOWED=1
+export __GL_VRR_ALLOWED=1
+
+# Wayland Native & Compatibility
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+export GDK_BACKEND="wayland,x11,*"
+export QT_QPA_PLATFORM="wayland;xcb"
+export QT_QPA_PLATFORMTHEME=hyprqt6engine
+export SDL_VIDEODRIVER=wayland
+
+# Default Applications
+export EDITOR=helix
+export VISUAL=helix
+export BROWSER=zen-browser
+export TERMINAL=alacritty
