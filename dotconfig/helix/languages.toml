@@ -2,3 +2,7 @@
 name = "rust"
 auto-format = true
 formatter = { command = "rustfmt" }
+[[language]]
+name = "vue"
+language-servers = ["vue-language-server", "eslint"]
+auto-format = true

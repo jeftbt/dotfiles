@@ -78,6 +78,7 @@ function y() {
 alias c="clear"
 alias h="history"
 alias ff="clear && fastfetch"
+alias matrix="rustrix-term --color cyan --chars binary --speed 10 --density 1.2"
 alias grep="grep --color=auto"
 alias ..="cd .."
 alias ...="cd ../.."
