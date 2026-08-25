@@ -14,6 +14,7 @@ setopt hist_ignore_space      # Başında boşluk bırakarak yazılan komutları
 setopt hist_reduce_blanks     # Komutlardaki gereksiz boşlukları temizleyip kaydet
 setopt hist_expire_dups_first # Geçmiş dolduğunda önce mükerrerleri sil
 setopt hist_find_no_dups      # Arama yaparken mükerrer sonuç getirme
+export HISTORY_IGNORE="(\&|[bf]g|c|clear|history|exit|q|pwd|* --help)"
 
 # 2. Akıllı Zsh Davranış Seçenekleri
 setopt autocd                 # 'cd' yazmadan sadece klasör adı yazarak dizine geç
@@ -47,12 +48,29 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Büyük/küçük har
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"     # ls renk düzeniyle tamamlama menüsü
 zstyle ':completion:*' menu select                         # Ok tuşlarıyla seçilebilir menü
 
+# fzf-tab Eklentisi (Tab menüsünü FZF menüsüne çevirir - compinit'ten sonra yüklenmeli)
+if [ -f /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh ]; then
+    source /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
+
+    # fzf-tab Önizleme ve Davranış Ayarları
+    zstyle ':fzf-tab:*' switch-group ',' '.'
+    zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --icons=auto $realpath 2>/dev/null'
+    zstyle ':fzf-tab:complete:(\\|*/|)(bat|cat|hx|helix):*' fzf-preview 'bat --style=numbers --color=always --line-range :300 $realpath 2>/dev/null'
+    zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word 2>/dev/null'
+    zstyle ':fzf-tab:complete:kill:argument-rest' fzf-preview 'ps --pid=$word -o cmd --no-headers -w -w 2>/dev/null'
+    zstyle ':fzf-tab:complete:*:*' fzf-preview 'if [ -d "$realpath" ]; then eza -1 --color=always --icons=auto "$realpath" 2>/dev/null; elif [ -f "$realpath" ]; then bat --style=numbers --color=always --line-range :300 "$realpath" 2>/dev/null; fi'
+fi
+
 # 5. Ortam Değişkenleri & PATH
 export EDITOR="helix"
 export VISUAL="helix"
 export PAGER="less"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+
+# Renkli man sayfaları
+export LESS_TERMCAP_md="$(tput bold 2> /dev/null; tput setaf 2 2> /dev/null)"
+export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 
 typeset -U path # PATH içinde mükerrer kayıt oluşmasını engeller
 path=(
@@ -66,6 +84,7 @@ export PATH
 # 6. Alias'lar & Modern Araç İkameleri
 alias hx="helix"
 alias sudo='sudo '
+alias movie="moviebox-tui"
 
 # Yazi (Çıkışta dizin değiştirme destekli)
 function y() {
@@ -78,7 +97,8 @@ function y() {
 alias c="clear"
 alias h="history"
 alias ff="clear && fastfetch"
-alias matrix="rustrix-term --color cyan --chars binary --speed 10 --density 1.2"
+alias matrix="unimatrix -c cyan -s 95"
+alias 01="rustrix-term --color cyan --chars binary --speed 10.0"
 alias grep="grep --color=auto"
 alias ..="cd .."
 alias ...="cd ../.."
@@ -127,6 +147,15 @@ alias cgr="cargo run"
 alias cga="cargo add"
 alias cgn="cargo new"
 
+# Derleme (Tüm çekirdekleri kullanarak hızlı derleme)
+alias make="make -j\$(nproc)"
+alias ninja="ninja -j\$(nproc)"
+
+# Sistem Kısayolları
+alias fixpacman="sudo rm /var/lib/pacman/db.lck"
+alias jctl="journalctl -p 3 -xb"
+alias tb="nc termbin.com 9999"
+
 # Sessiz, Hızlı ve Kapsamlı Sistem Temizliği
 sysclean() {
     # Zsh onay sorularını ve 'no matches found' hatasını engelle
@@ -170,6 +199,18 @@ if [ -f /usr/share/fzf/key-bindings.zsh ]; then
     # Alt tuşu Super (Pencereler) tuşuna atandığı için Alt kısayolunu (Alt+C) iptal ediyoruz
     bindkey -r '\ec' 2>/dev/null
     bindkey -r '^[c' 2>/dev/null
+
+    # fd varsa FZF için varsayılan komut olarak ayarla (Hızlı ve .gitignore uyumlu)
+    if command -v fd &>/dev/null; then
+        export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
+        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+        export FZF_ALT_C_COMMAND="fd --type d --strip-cwd-prefix --hidden --follow --exclude .git"
+    fi
+
+    # FZF Görsel & Önizleme Seçenekleri (Ctrl+T ve Ctrl+R)
+    export FZF_DEFAULT_OPTS="--height 45% --layout=reverse --border --inline-info --prompt='❯ '"
+    export FZF_CTRL_T_OPTS="--preview 'if [ -d {} ]; then eza --tree --level=2 --color=always --icons=auto {} 2>/dev/null; else bat --style=numbers --color=always --line-range :300 {} 2>/dev/null; fi' --preview-window right:55%:wrap"
+    export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 fi
 
 # 8. Prompt (Starship entegrasyonu & Yedek Prompt)
@@ -191,7 +232,13 @@ if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; th
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
+# pkgfile "command not found" yardımcısı
+if [ -f /usr/share/doc/pkgfile/command-not-found.zsh ]; then
+    source /usr/share/doc/pkgfile/command-not-found.zsh
+fi
+
 # Sözdizimi Renklendirme (Syntax Highlighting - En sonda yer almalı)
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+export PATH="$HOME/.cargo/bin:$PATH"

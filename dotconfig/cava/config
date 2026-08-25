@@ -1,7 +1,5 @@
 ## Configuration file for CAVA.
 # Remove the ; to change parameters.
-background-opacity = 0.85
-background-blur = true
 
 [general]
 
@@ -241,18 +239,13 @@ background-blur = true
 ; waveform = 0
 
 [color]
-background = '#0D0F12'
 
-gradient = 1
+# 'default' will keep the terminal's default color.
+background = 'default'
+foreground = 'default'
 
-gradient_color_1 = '#8FAF9A'
-gradient_color_2 = '#82A7A8'
-gradient_color_3 = '#849CB8'
-gradient_color_4 = '#8B9BB4'
-gradient_color_5 = '#9AAEC8'
-gradient_color_6 = '#9B8EAD'
-gradient_color_7 = '#C2A878'
-gradient_color_8 = '#B98282'
+# Gradient mode (0 = disabled, 1 = enable)
+gradient = 0
 
 
 [smoothing]

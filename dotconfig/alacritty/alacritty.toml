@@ -1,3 +1,6 @@
+[general]
+live_config_reload = true
+
 [font]
 size = 12.0
 
@@ -13,33 +16,33 @@ x = 8
 y = 6
 
 [colors.primary]
-background = "#0D0F12"
-foreground = "#CDD6F4"
+foreground = "#bfbdb6"
+background = "#0b0e14"
 
 [colors.cursor]
-cursor = "#F5E0DC"
-text = "#11111B"
+text = "#0b0e14"
+cursor = "#bfbdb6"
 
 [colors.selection]
-text = "#CDD6F4"
-background = "#45475A"
+text = "#bfbdb6"
+background = "#1b3a5b"
 
 [colors.normal]
-black   = "#45475A"
-red     = "#F38BA8"
-green   = "#A6E3A1"
-yellow  = "#F9E2AF"
-blue    = "#89B4FA"
-magenta = "#F5C2E7"
-cyan    = "#94E2D5"
-white   = "#BAC2DE"
+black = "#1e232b"
+red = "#ea6c73"
+green = "#7fd962"
+yellow = "#f9af4f"
+blue = "#53bdfa"
+magenta = "#cda1fa"
+cyan = "#90e1c6"
+white = "#c7c7c7"
 
 [colors.bright]
-black   = "#585B70"
-red     = "#F38BA8"
-green   = "#A6E3A1"
-yellow  = "#F9E2AF"
-blue    = "#89B4FA"
-magenta = "#F5C2E7"
-cyan    = "#94E2D5"
-white   = "#A6ADC8"
+black = "#686868"
+red = "#f07178"
+green = "#aad94c"
+yellow = "#ffb454"
+blue = "#59c2ff"
+magenta = "#d2a6ff"
+cyan = "#95e6cb"
+white = "#ffffff"
