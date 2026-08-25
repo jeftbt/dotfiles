@@ -4,7 +4,7 @@
 -- Ana Aç/Kapa Anahtarı: İstediğiniz zaman 'false' / 'true' yapabilirsiniz.
 hl.config({
 	animations = {
-		enabled = false,
+		enabled = true,
 	},
 })
 
